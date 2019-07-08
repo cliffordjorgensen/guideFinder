@@ -52,7 +52,7 @@ CLiff: create a scroll area for profiles, then work on map markers
 
 Adam: routes skeleton, chat stuff
 
-Julianna: profiles database, apiRoutes.
+Julianna: profiles database, fake profiles.
 
 
 CSS: anyone who cares
