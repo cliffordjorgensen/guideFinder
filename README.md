@@ -46,13 +46,14 @@ bootstrap
 
 current work assignments:
 
-database creation: Badri
+Badri:l database creation, for travelers and guides
 
-landing page: CLiff
+CLiff: create a scroll area for profiles, then work on map markers 
 
-routes/socket.io : Adam
+Adam: routes skeleton, chat stuff
 
-guide profile api: Julianna
+Julianna: profiles database, apiRoutes.
+
 
 CSS: anyone who cares
 
