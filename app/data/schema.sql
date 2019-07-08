@@ -9,6 +9,6 @@ photolink NULL,
 age INT NULL,
 activity VARCHAR(500) NULL,
 city VARCHAR(255) NULL,
-yeasofExperience INT NULL,
+yearsofExperience INT NULL,
 descriptionActivity VARCHAR(9001) NULL,
 PRIMARY KEY (guideID));

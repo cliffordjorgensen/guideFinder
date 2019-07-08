@@ -1,4 +1,4 @@
-INSERT INTO guideinfo  (id, name, photolink, age, activity, city, yearsofExperience, descriptionActivity) 
+INSERT INTO guideinfo  (name, photolink, age, activity, city, yearsofExperience, descriptionActivity) 
 VALUES ("Lucas Brennan", 
 "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", 
 27, 
@@ -8,7 +8,7 @@ VALUES ("Lucas Brennan",
 "San Francisco Love Tour: On this San Francisco tour, I will drive you down the very steep and crooked Lombard Street, 
 and around neighborhoods such as the Mission, the Castro, and North Beach without worrying about getting around or parking. 
 we will venture down streets other bigger bus tours can’t go, and get in the loving spirit the City by 
-the Bay is well known for as you spot famous musicians’ homes while listening to classic songs." );
+the Bay is well known for as you spot famous musicians’ homes while listening to classic songs." ),
 ("Logan Smith", 
 "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 32, 
@@ -17,8 +17,9 @@ the Bay is well known for as you spot famous musicians’ homes while listening 
 5, 
 "Best of Berkeley Gourmet Food Tour: On this gourmet food walking tour of Berkeley’s ‘Gourmet Ghetto,’ 
 venture behind the scenes of the North Shattuck district. Food tastings include gourmet cheeses, chocolates, gelato, pizza,
-sandwiches, and wine at notable venues committed to sustainable and organic cuisine of this San Francisco Bay Area enclave." );
+sandwiches, and wine at notable venues committed to sustainable and organic cuisine of this San Francisco Bay Area enclave." ),
 ("Olivia Johnson", 
+
 "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
 28, 
 "Wine tour", 
@@ -26,7 +27,7 @@ sandwiches, and wine at notable venues committed to sustainable and organic cuis
 3, 
 "Napa wine Tour: We will welcome you to explore in one day, three of the best wineries in Sonoma Valley 
 (Ram's Gate, Winery Sixteen 600 and Larson Family Vineyards. We'll enjoy and epic catered lunch at our second stop. 
-Payment for wine tasting at each location, anticipate between $25-40 in tastings per person per winery" );
+Payment for wine tasting at each location, anticipate between $25-40 in tastings per person per winery" ),
 ("Tiffany Allen", 
 "https://images.pexels.com/photos/975680/pexels-photo-975680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 30, 
@@ -34,7 +35,7 @@ Payment for wine tasting at each location, anticipate between $25-40 in tastings
 "Oakland", 
 6, 
 "Crafting with Leather: Make your own personalized leather valettray that you can use in the home, officer or abroad. 
-Learn leather craft basics and how to consttruct a dimensional and functional piece, using just your hands and manual tools." );
+Learn leather craft basics and how to consttruct a dimensional and functional piece, using just your hands and manual tools." ),
 ("Michael Dunder",
 "https://nquerysolutions.com/wp-content/uploads/2017/10/pexels-photo-551653-1.jpeg",
 39,
@@ -44,7 +45,7 @@ Learn leather craft basics and how to consttruct a dimensional and functional pi
 "I’ll show you things you won’t see from others. Choose from several tours or I’ll create a custom itinerary. 
 I pride myself in developing a unique itinerary to meet your interests, and welcome children and senior citizens or those needing assistance. 
 You’ll tour the Oakland in a new Lexus sedan which seats up to 4 passengers very comfortably with fantastic legroom. 
-The sedan allows us access to neighborhoods and viewpoints that are off limits to larger van and bus tours." );
+The sedan allows us access to neighborhoods and viewpoints that are off limits to larger van and bus tours." ),
 ("Norman Malone",
 "https://pixel.nymag.com/imgs/daily/vulture/2017/04/24/24-Freddie-Highmore-chatroom-silo.w330.h412.png",
 27,
