@@ -1,66 +1,43 @@
 <!DOCTYPE html>
-
-<html class="no-js">
-
+<html>
 
 <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        
+        #map {
+            height: 50%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <div id="map"></div>
+    <div id="map"></div>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-outline-secondary" type="button">Button</button>
+            <button class="btn btn-outline-secondary" type="button">Button</button>
         </div>
     </div>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search Term" aria-label="Search Term" aria-describedby="button-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
-        </div>
-    </div>
-
-    <nav id="navbar-example2" class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#fat">@fat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#mdo">@mdo</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#one">one</a>
-                    <a class="dropdown-item" href="#two">two</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#three">three</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-        <h4 id="fat">@fat</h4>
-        <p>...</p>
-        <h4 id="mdo">@mdo</h4>
-        <p>...</p>
-        <h4 id="one">one</h4>
-        <p>...</p>
-        <h4 id="two">two</h4>
-        <p>...</p>
-        <h4 id="three">three</h4>
-        <p>...</p>
-    </div>
-
     <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
         var map, infoWindow;
 
         function initMap() {
@@ -101,13 +78,9 @@
                 'Error: Your browser doesn\'t support geolocation.');
             infoWindow.open(map);
         }
-        initMap();
     </script>
-
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap">
     </script>
-
-
 </body>
 
 </html>
