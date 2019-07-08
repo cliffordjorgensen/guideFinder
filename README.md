@@ -47,8 +47,11 @@ bootstrap
 current work assignments:
 
 database creation: Badri
+
 landing page: CLiff
+
 routes/socket.io : Adam
+
 guide profile api: Julianna
 
 CSS: anyone who cares
