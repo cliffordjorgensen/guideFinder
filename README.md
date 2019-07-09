@@ -31,7 +31,8 @@ After account creation the traveler will have the ability to chat with the guide
   
 ## Guide Profile
 
-  * 
+  * Navigation Bar
+  *
   
   
   
