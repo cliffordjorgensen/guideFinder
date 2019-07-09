@@ -20,11 +20,11 @@ app.set("view engine", "handlebars");
 // app.use(routes);
 
 var icecreams = [
-    { name: 'vanilla', photolink: 10, age: 3, activity: 'nothing'},
-    { name: 'chocolate', photolink: 4, age: 8, activity: 'something'},
+    { name: 'vanilla', photolink: 10, age: 3, activity: 'nothing' },
+    { name: 'chocolate', photolink: 4, age: 8, activity: 'something' },
     { name: 'banana', photolink: 1, age: 1, activity: 'whatever' },
     { name: 'greentea', photolink: 5, age: 7, activity: 'hello' },
-    { name: 'jawbreakers', photolink: 6, age: 2, activity: 'still nothing'},
+    { name: 'jawbreakers', photolink: 6, age: 2, activity: 'still nothing' },
 ];
 
 app.get("/", function(req, res) {
