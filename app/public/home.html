@@ -3,27 +3,38 @@
 
 <head>
     <title>Guide Finder</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-
+    <!-- google map -->
     <div id="map"></div>
 
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search term" aria-label="traveler search term" aria-describedby="button-addon4">
-        <div class="input-group-append" id="button-addon4">
-            <button class="btn btn-outline-secondary" type="button">Filters</button>
-            <button class="btn btn-outline-secondary" type="button">Submit</button>
+    <!-- keyword input bar -->
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search term" aria-label="traveler search term" aria-describedby="button-addon4">
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-outline-secondary" type="button">Filters</button>
+                    <button class="btn btn-outline-secondary" type="button">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 
+
+
+    <!-- profile carousel -->
     <div class="container-fluid">
-        <h1 class="text-center mb-3">Guide Profiles</h1>
+        <button type="button" class="btn btn-secondary btn-lg btn-block"><h2 class="text-center mb-3">Guide Profiles</h2></button>
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner row w-100 mx-auto">
                 <div class="carousel-item col-md-4 active">
@@ -62,7 +73,7 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="./assets/images/placeholder.png" ass="card-img" alt="...">
+                                <img src="./assets/images/placeholder.png" class="card-img" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -150,8 +161,15 @@
         </div>
     </div>
 
+
+
     <script src="assets/javascript/map.js">
     </script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- google api -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap">
     </script>
 </body>

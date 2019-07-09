@@ -1,5 +1,26 @@
 #map {
     height: 40%;
+    margin: 1%;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.jumbotron {
+    height: 8%;
+    margin: 1%;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.btn-secondary {
+    position: relative;
+    margin: 1%;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.input-group {
+    position: center;
 }
 
 html,
@@ -7,6 +28,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: olivedrab;
 }
 
 @media (min-width: 768px) {
