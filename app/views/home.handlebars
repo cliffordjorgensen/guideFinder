@@ -1,0 +1,63 @@
+<!-- google map -->
+<div id="map"></div>
+
+<!-- keyword input bar -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search term" aria-label="traveler search term"
+                aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="button">Filters</button>
+                <button class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- profile carousel -->
+<div class="container-fluid">
+    <button type="button" class="btn btn-secondary btn-lg btn-block">
+        <h2 class="text-center mb-3">Guide Profiles</h2>
+    </button>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner row w-100 mx-auto">
+            {{#each icecreams}}
+                <div class="carousel-item col-md-4 active">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="./assets/images/placeholder.png" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{name}}</h5>
+                                     <h5 class="card-title">{{photolink}}</h5>
+                                      <h5 class="card-title">{{age}}</h5>
+                                       <h5 class="card-title">{{activity}}</h5>
+                                        <h5 class="card-title">{{city}}</h5>
+                                         <h5 class="card-title">{{yearsOfExperience}}</h5>
+                                          <h5 class="card-title">{{descriptionActivity}}</h5>
+
+                                    {{!-- <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p> --}}
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
