@@ -1,16 +1,48 @@
-# guideFinder
+# Guide Finder 
 
-travel experiences application
+Travel experiences application allows travelers to connect with local guides.
 
-landing page includes a geolocation map,  search bar, and a profile scroll section.
+Guides create a detailed profile including the services/experiences they are offering inclucding cost. 
 
-travelers can see nearby guides and their profiles.
+Guide profiles also include ratings from previous travelers and an option to connect and schedule.
 
-search bar will take a keyword will have a button(modal) to specify distance and other filters.
+Travelers can access the application until they wish to connect with a guide.
 
-when traveler clicks on profiles, the profile scroll expands to the whole screen. nav bar at the top to navigate back home or reset filters.
+When the traveler clicks the connect with guide button they are prompted to create an account.
 
-scroll bar will include profile thumbnails, when traveler clicks on a profile it expands and the traveler can see everything the guide has to offer.
+After account creation the traveler will have the ability to chat with the guide they want to connect with.
+
+## Home page
+
+  * Navigation bar
+  * Google map of travelers current position
+  * Search bar with an option to filter(modal)
+  * Rotating carousel of nearby giuides
+  * Button that maximizes guide profiles
+  
+## Profile Page
+
+  * Navigation Bar
+  * Switch from the carousel to a full screen scroll 
+  * Map is hidden
+  * Scroll bar with bootstrap cards for guide profiles
+  * Each profile card has an image, name, and short text(sales-pitch)
+  * Card click expands profile to full screen
+  
+## Guide Profile
+
+  * Navigation Bar
+  *
+  
+  
+  
+
+
+
+
+
+
+
 
 when traveler wants to connect with guide, prompt traveler for account creation.(modal)
 basic info just enough stuff.

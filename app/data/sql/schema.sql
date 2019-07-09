@@ -3,12 +3,13 @@ CREATE DATABASE guidefinder_db;
 
 USE guidefinder_db;
 CREATE TABLE guideInfo(
-guideID INT AUTO_INCREMENT,
+guide_id INT AUTO_INCREMENT,
 name VARCHAR (255) NULL,
-photolink NULL,
+photo_link VARCHAR (255) NULL,
 age INT NULL,
 activity VARCHAR(500) NULL,
 city VARCHAR(255) NULL,
-yearsofExperience INT NULL,
-descriptionActivity VARCHAR(9001) NULL,
-PRIMARY KEY (guideID));
+years_experience INT NULL,
+activity_description VARCHAR(9001) NULL,
+PRIMARY KEY (guide_id)
+);
