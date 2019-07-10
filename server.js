@@ -14,11 +14,6 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-// var routes = require("./controllers/mainController.js");
-
-// app.use(routes);
-
 var icecreams = [
     { name: 'vanilla', photolink: 10, age: 3, activity: 'nothing' },
     { name: 'chocolate', photolink: 4, age: 8, activity: 'something' },
