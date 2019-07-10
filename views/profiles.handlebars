@@ -1,77 +1,20 @@
-<!DOCTYPE html>
-
-<html>
-
-
-<head>
-    <title>Guide Finder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-
-<body>
-    <nav id="navbar-example2" class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#fat">@fat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#mdo">@mdo</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#one">one</a>
-                    <a class="dropdown-item" href="#two">two</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#three">three</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
 
     {{#each guideinfo}}
      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="fat">
             <div class="jumbotron">
-                <img src={{photolink}} width="350" height="350" class="imagespics">
+                <img src={{photolink}} class="rounded float-right col-md-6">
                 <h1>{{name}}</h1>
                 <p>Age: {{age}}</p>
-                <p>Activity: {{activity}}</p>
-                <p>City: {{city}}</p>
-                <p>Years os experience: {{yearsofExperience}}</p>
-                <p> {{descriptionActivity}}</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                <p>Years of experience: {{yearsofExperience}}</p>
+                <p>{{activity}}</p>
+                <p>{{city}}</p>
+                <p>{{descriptionActivity}}</p>
+                <a class="btn btn-primary btn-lg extendedInfo active" type="button radio" data-id={{guideID}} href="#" role="button">See full profile</a>
             </div>
         </h4>
         <p>...</p>
+
+    </div>
     {{/each}}
     
-
-
-
-
-    <script src="assets/javascript/map.js"></script>
-    <script src="assets/javascript/carousel.js"></script>
-    <!-- bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <!-- google api -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
-</body>
-
-</html>

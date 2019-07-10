@@ -47,7 +47,7 @@ I pride myself in developing a unique itinerary to meet your interests, and welc
 You’ll tour the Oakland in a new Lexus sedan which seats up to 4 passengers very comfortably with fantastic legroom. 
 The sedan allows us access to neighborhoods and viewpoints that are off limits to larger van and bus tours." ),
 ("Norman Malone",
-"https://pixel.nymag.com/imgs/daily/vulture/2017/04/24/24-Freddie-Highmore-chatroom-silo.w330.h412.png",
+"https://images.pexels.com/photos/346824/pexels-photo-346824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
 27,
 "Oceans and Beaches",
 "San Mateo",
@@ -57,12 +57,11 @@ Silicon Valley, and Monterey and Santa Cruz. I also offer completely customizabl
 
 
 
-
-
+-- pictures database--------------
 
 INSERT INTO pictures (pic1, pic2, pic3, pic4, pic5)
 VALUES("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/06/6f/7b/83.jpg",
 "https://images.pexels.com/photos/258447/pexels-photo-258447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 "https://images.pexels.com/photos/672916/pexels-photo-672916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 "https://images.pexels.com/photos/1119075/pexels-photo-1119075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
-"https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+"https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
