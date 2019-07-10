@@ -17,18 +17,25 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "@Apartment7",
     database: "guidefinder_db"
 });
 
-
-app.get("/", function(req, res) {
-    res.render('index', { icecreams })
+connection.connect(function(err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+    }
+    console.log("connected as id " + connection.threadId);
 });
 
-app.get("/home", function(req, res) {
-    res.render('home', { icecreams })
-});
+
+app.get("/home", (req, res) => {
+    connection.query('SELECT * FROM guideinfo;', (err,data) => {
+         console.log(data);
+         res.render('home', {guideinfo: data});
+     })
+ });
 
 app.get("/profiles", (req, res) => {
    connection.query('SELECT * FROM guideinfo;', (err,data) => {
