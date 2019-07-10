@@ -11,15 +11,6 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
-var icecreams = [
-    { name: 'vanilla', photolink: 10, age: 3, activity: 'nothing' },
-    { name: 'chocolate', photolink: 4, age: 8, activity: 'something' },
-    { name: 'banana', photolink: 1, age: 1, activity: 'whatever' },
-    { name: 'greentea', photolink: 5, age: 7, activity: 'hello' },
-    { name: 'jawbreakers', photolink: 6, age: 2, activity: 'still nothing' },
-];
-
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
@@ -38,14 +29,6 @@ connection.connect(function(err) {
     console.log("connected as id " + connection.threadId);
 });
 
-
-// app.get("/", function(req, res) {
-//     res.render('index', { icecreams })
-// });
-
-// app.get("/home", function(req, res) {
-//     res.render('home', { icecreams })
-// });
 
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err,data) => {
