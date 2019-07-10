@@ -22,29 +22,21 @@ const connection = mysql.createConnection({
 });
 
 
-app.get("/", function(req, res) {
-    res.render('index', { icecreams })
-});
-
-app.get("/home", function(req, res) {
-    res.render('home', { icecreams })
-});
-
 app.get("/profiles", (req, res) => {
-   connection.query('SELECT * FROM guideinfo;', (err,data) => {
+    connection.query('SELECT * FROM guideinfo;', (err, data) => {
         console.log(data);
-        res.render('profiles', {guideinfo: data});
+        res.render('profiles', { guideinfo: data });
     })
 });
 
 app.get("/profiles/:id", (req, res) => {
     const id = req.params.id
     console.log(id)
-  connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [id], (err,data) => {
-      if (err) throw err
-    console.log(data);   
-    res.send(data[0]);
-       
+    connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [id], (err, data) => {
+        if (err) throw err
+        console.log(data);
+        res.send(data[0]);
+
     })
 });
 
