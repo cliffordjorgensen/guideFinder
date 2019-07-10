@@ -26,6 +26,7 @@ body {
     background-color: olivedrab;
 }
 
+
 @media (min-width: 768px) {
     /* show 3 items */
     .carousel-inner .active,

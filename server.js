@@ -21,14 +21,6 @@ const connection = mysql.createConnection({
     database: "guidefinder_db"
 });
 
-var icecreams = [
-    { name: 'vanilla', photolink: 10, age: 3, activity: 'nothing' },
-    { name: 'chocolate', photolink: 4, age: 8, activity: 'something' },
-    { name: 'banana', photolink: 1, age: 1, activity: 'whatever' },
-    { name: 'greentea', photolink: 5, age: 7, activity: 'hello' },
-    { name: 'jawbreakers', photolink: 6, age: 2, activity: 'still nothing' },
-];
-
 
 app.get("/", function(req, res) {
     res.render('index', { icecreams })
@@ -39,10 +31,20 @@ app.get("/home", function(req, res) {
 });
 
 app.get("/profiles", (req, res) => {
-    console.log("Yeee")
-    connection.query('SELECT * FROM guideinfo;', (err,data) => {
+   connection.query('SELECT * FROM guideinfo;', (err,data) => {
         console.log(data);
         res.render('profiles', {guideinfo: data});
+    })
+});
+
+app.get("/profiles/:id", (req, res) => {
+    const id = req.params.id
+    console.log(id)
+  connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [id], (err,data) => {
+      if (err) throw err
+    console.log(data);   
+    res.send(data[0]);
+       
     })
 });
 
