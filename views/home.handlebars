@@ -15,38 +15,57 @@
     </div>
 </div>
 
+
+
 <!-- profile carousel -->
 <div class="container-fluid">
-    <button type="button" class="btn btn-secondary btn-lg btn-block">
-        <h2 class="text-center mb-3">Guide Profiles</h2>
-    </button>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <button type="button" class="btn btn-secondary btn-lg btn-block" class="extendedInfo">
+        <h2 class="text-center mb-3">Guide Profiles</h2></button>
+    
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">    
         <div class="carousel-inner row w-100 mx-auto">
-            {{#each guideinfo}}
             <div class="carousel-item col-md-4 active">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
                             <img src={{photolink}} class="float-left col-md-8">
-                           
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                
-                                <p class="card-title">{{name}}</p>
-                                <p class="card-title">Age: {{age}}</p>
-                                <p class="card-title">{{activity}}</p>
-                                <p class="card-title">{{city}}</p>
-                                <p class="card-title">{{yearsOfExperience}}</p>
+                                <h5 class="card-title">{{name}}</h5>
+                                <p class="card-text">{{age}}</p>
+                                <p class="card-text">{{activity}}</p>
+                                <p class="card-text">{{city}}</p>
+                                <p class="card-text">{{yearsOfExperience}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {{/each}}
+            {{#each guideinfo}}
+            <div class="carousel-item col-md-4 ">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src={{photolink}} class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{name}}</h5>
+                                <p class="card-text">{{age}}</p>
+                                <p class="card-text">{{activity}}</p>
+                                <p class="card-text">{{city}}</p>
+                                <p class="card-text">{{yearsOfExperience}}</p>
 
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,4 +76,12 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+    
+    
 </div>
+ 
+
+
+
+

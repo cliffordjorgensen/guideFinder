@@ -1,0 +1,20 @@
+
+    {{#each guideinfo}}
+     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <h4 id="fat">
+            <div class="jumbotron">
+                <img src={{photolink}} class="rounded float-right col-md-4">
+                <h1><strong>{{name}}</strong></h1>
+                <br>
+                <p><strong>Age: </strong>{{age}}</p>
+                <p><strong>Years of experience: </strong>{{yearsofExperience}}</p>
+                <p><strong>Activities: </strong>{{activity}}</p>
+                <p><strong>City: </strong>{{city}}</p>
+                <p><strong>Description: </strong>{{descriptionActivity}}</p>
+                <a class="btn btn-primary btn-lg extendedInfo active" type="button radio" data-id={{guideID}} href="#" role="button">See full profile</a>
+            </div>
+        </h4>
+        <p>...</p>
+    </div>
+    {{/each}}
+    

@@ -11,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
 </head>
-
 <body>
     <nav id="navbar-example2" class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Home</a>
@@ -21,6 +20,17 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#mdo">Contact us</a>
+            </li>
+            <!--sign in options -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Log In</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item guide" href="#one">Guide</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item traveler" href="#two">Traveler</a>
+                   
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
@@ -36,8 +46,10 @@
     </nav>
     {{{body}}}
 
+
     <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -46,6 +58,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <img id="match-img"
                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""
@@ -57,35 +70,11 @@
                     <p id="descriptionActivity"></p>
                 </div>
 
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary active" data-dismiss="modal">Close</button>
                     <button type="button" class="contactme btn btn-success active">Contact Me</button>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade bd-example-modal-lg" id="myModal2" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input value="+1" id="country_code" />
-                    <input placeholder="phone number" id="phone_number" />
-                    <button onclick="smsLogin();">Login via SMS</button>
-                    <div>OR</div>
-                    <input placeholder="email" id="email" />
-                    <button onclick="emailLogin();">Login via Email</button>
-                </div>
-
-            
             </div>
         </div>
     </div>
@@ -108,8 +97,9 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
 
 
+
     <script>
-        $(document).ready(function () {
+        $(document).ready(function () { 
             $(".extendedInfo").on("click", function (e) {
                 e.preventDefault();
                 const id = $(this).attr("data-id")
@@ -141,6 +131,7 @@
         });
 
     </script>
+
 
 </body>
 

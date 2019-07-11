@@ -24,24 +24,37 @@ const connection = mysql.createConnection({
 });
 
 
-app.get("/", function (req, res) {
-    res.render('index', { icecreams })
+var login = [{
+    username: 'logansmith',
+    password: 'password'
+}]
+connection.connect(function(err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+    }
+    console.log("connected as id " + connection.threadId);
 });
+
 
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
+
+
         res.render('home', { guideinfo: data });
     })
 });
 
 app.get("/profiles", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
+        
         res.render('profiles', { guideinfo: data });
     })
 });
 
 app.get("/profiles/:id", (req, res) => {
     const id = req.params.id
+
     connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [id], (err, data) => {
         if (err) throw err
         res.send(data[0]);
@@ -87,12 +100,10 @@ connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
         console.log("pics updated successfull");
     });
 }); 
-
-
-
-
-
-
-app.listen(PORT, function () {
-    console.log("App now listening at localhost:" + PORT);
+app.get('/login', (req, res)=>{
+  res.render('login', {login});
 });
+
+app.listen(PORT, function() {
+  console.log("App now listening at localhost:" + PORT)});
+
