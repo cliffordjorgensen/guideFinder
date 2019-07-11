@@ -71,6 +71,9 @@
     </div>
 
 
+
+
+
     <!-- Javascript links -->
     <script src="assets/javascript/map.js"></script>
     <script src="assets/javascript/carousel.js"></script>
@@ -86,6 +89,34 @@
     <!-- google api -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
+<<<<<<< HEAD
+
+
+    <script>
+        $(document).ready(function () { 
+            $(".extendedInfo").on("click", function (e) {
+                e.preventDefault();
+                const id = $(this).attr("data-id")
+                $.get("/profiles/"+id).then(function(data){
+              
+                    $("#exampleModalLongTitle").text(data.name);
+                    $("#match-img").attr("src", data.photolink);
+                    $("#age").text(data.age);
+                    $("#activity").text(data.activity);
+                    $("#city").text(data.city);
+                    $("#yearsofExperience").text(data.yearsofExperience);
+                    $("#descriptionActivity").text(data.descriptionActivity);
+
+                    $('#myModal').modal('toggle');
+                });  
+            });
+
+        });
+
+    </script>
+
+=======
+>>>>>>> fd47a4907d2d16c6591f9e945e207b7b744dedbe
 </body>
 
 </html>
