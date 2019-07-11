@@ -82,7 +82,7 @@ Badri:l database creation, for travelers and guides
 
 CLiff: create a scroll area for profiles, then work on map markers 
 
-Adam: routes skeleton, chat stuff
+Adam: chat stuff, fix misc issues
 
 Julianna: profiles database, fake profiles.
 
