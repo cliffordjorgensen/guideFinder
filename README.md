@@ -53,13 +53,13 @@ After account creation the traveler will have the ability to chat with the guide
   
 current work assignments:
 
-Badri: authentication for guides
+Badri: after guide authentication, guide re-direction.
 
-CLiff: MAPS, profile creation
+CLiff: MAPS cluster of guide markers collect lat and lng data for guide.
 
-Adam: CHAT, 
+Adam: CHAT(socket.io)
 
-Julianna: User Athentication
+Julianna: user accounts
 
 
 CSS: anyone who cares
