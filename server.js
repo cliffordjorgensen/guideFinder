@@ -58,8 +58,6 @@ app.get("/profiles/:id", (req, res) => {
     })
 });
 
-
-
 // $('.guide').on('click', function(event){
     app.get('/login', (req, res)=>{
         res.render('login', {login});
