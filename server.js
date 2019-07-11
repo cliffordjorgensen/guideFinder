@@ -21,6 +21,10 @@ const connection = mysql.createConnection({
     database: "guidefinder_db"
 });
 
+var login = [{
+    username: 'logansmith',
+    password: 'password'
+}]
 connection.connect(function(err) {
     if (err) {
         console.error("error connecting: " + err.stack);
@@ -51,10 +55,16 @@ app.get("/profiles/:id", (req, res) => {
         if (err) throw err
         console.log(data);
         res.send(data[0]);
-
     })
 });
 
+
+
+// $('.guide').on('click', function(event){
+    app.get('/login', (req, res)=>{
+        res.render('login', {login});
+    });
+// });
+
 app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT);
-});
+    console.log("App now listening at localhost:" + PORT)});
