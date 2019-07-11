@@ -11,6 +11,8 @@ activity VARCHAR(500) NULL,
 city VARCHAR(255) NULL,
 yearsofExperience INT NULL,
 descriptionActivity VARCHAR(9001) NULL,
+latitude DECIMAL(9,6),
+longitude DECIMAL(9,6)
 PRIMARY KEY (guideID)); 
 
 SELECT * from guideinfo;
@@ -27,3 +29,17 @@ PRIMARY KEY (pictureID));
 FOREIGN KEY (guideID) REFERENCES guideinfo(guideID)
 
 SELECT * from pictures;
+
+CREATE TABLE travelersinfo(
+  traveler_id INT AUTO_INCREMENT,
+  name VARCHAR (255) NULL,
+photolink VARCHAR(255) NULL,
+age INT NULL,
+activity VARCHAR(500) NULL,
+city VARCHAR(255) NULL,
+yearsofExperience INT NULL,
+descriptionActivity VARCHAR(9001) NULL,
+latitude DECIMAL(9,6),
+longitude DECIMAL(9,6)
+PRIMARY KEY (guideID)); 
+)
