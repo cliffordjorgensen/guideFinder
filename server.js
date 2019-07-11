@@ -39,15 +39,16 @@ connection.connect(function(err) {
 
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
+        const active = data[0]
+        const restOfGuides = data.slice(1)
+        res.render('home', { guideinfo: restOfGuides, active: active });
 
-
-        res.render('home', { guideinfo: data });
     })
 });
 
 app.get("/profiles", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
-        
+
         res.render('profiles', { guideinfo: data });
     })
 });
@@ -62,49 +63,49 @@ app.get("/profiles/:id", (req, res) => {
     })
 });
 
-connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
-    
-    const response =[]
+connection.query('SELECT activity, city FROM guideinfo;', (err, data) => {
+
+    const response = []
     const tempPics = ""
-    data.forEach(function (e){
+    data.forEach(function(e) {
         const temp = e.city + " " + e.activity
         response.push(temp)
     })
-    
-    response.forEach(function(elem){
+
+    response.forEach(function(elem) {
         pexelsClient.search(elem, 10, 1)
-    .then(function (result) {
-        for (let i = 0; i < result.photos.length; i++) {
-            const temp = result.photos[i].url
-            // console.log(temp);
-            tempPics += temp + ","
-            if( i % 5 === 0){
-                tempPics += "/n"
-                
-            }
-         
-        } 
-        console.log(tempPics);
+            .then(function(result) {
+                for (let i = 0; i < result.photos.length; i++) {
+                    const temp = result.photos[i].url
+                        // console.log(temp);
+                    tempPics += temp + ","
+                    if (i % 5 === 0) {
+                        tempPics += "/n"
 
-    }).
-    catch(function (e) {
-        // console.err(e);
+                    }
 
-    });
+                }
+                console.log(tempPics);
+
+            }).
+        catch(function(e) {
+            // console.err(e);
+
+        });
     })
 
-    fs.appendFile("sfpics.csv", JSON.stringify(tempPics), function (err) {
+    fs.appendFile("sfpics.csv", JSON.stringify(tempPics), function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("pics updated successfull");
 
     });
-}); 
-app.get('/login', (req, res)=>{
-  res.render('login', {login});
+});
+app.get('/login', (req, res) => {
+    res.render('login', { login });
 });
 
 app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT)});
-
+    console.log("App now listening at localhost:" + PORT)
+});
