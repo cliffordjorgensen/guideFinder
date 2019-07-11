@@ -60,21 +60,27 @@ app.get("/profiles/:id", (req, res) => {
 
 // $('.guide').on('click', function(event){
     app.get('/login', (req, res)=>{
-        res.render('login', {login});
+        res.render('login');
     });
 // });
     
-    app.post('/api/login/:email/:password', function(req, res){
+    app.post('/login', function(req, res){
+        console.log(req.body)
         const email = req.body.email;
         const password = req.body.password;
-        connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, users){
+        const query = connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, results){
             if (err) throw err;
-            console.log(users)
 
-            // res.json(result);
-            // console.log(result);
+            
+            if (results.length === 0) {
+                res.status(401).send("invalid")
+                // res.render()
+            } else {
+                // res.send("valid")
+                res.render("home")
+            }
+            console.log(query.sql, results);
         })
-        res.json(res);
     })
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT)});
