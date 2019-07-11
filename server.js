@@ -98,6 +98,7 @@ connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
             return console.log(err);
         }
         console.log("pics updated successfull");
+
     });
 }); 
 app.get('/login', (req, res)=>{
