@@ -36,14 +36,14 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
-$(".guide").on('click', function(event){
-    console.log("guide");
-})
-$('.traveler').on('click', function(event){
-    console.log('traveler')
-})
+$('.btn').on('click', function(event){
+    event.preventDefault()
+    console.log('i am clicked')
 
-
+$.ajax({url: '/login', method: 'get'}).then(function(res){
+        console.log("this is the response from map ", res);
+    })
+});
 // function initMap() {
 
 //     var map = new google.maps.Map(document.getElementById('map'), {
@@ -92,4 +92,4 @@ $('.traveler').on('click', function(event){
 //     { lat: -42.734358, lng: 147.501315 },
 //     { lat: -42.735258, lng: 147.438000 },
 //     { lat: -43.999792, lng: 170.463352 }
-// ]
+// 

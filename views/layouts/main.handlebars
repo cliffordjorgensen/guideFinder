@@ -9,6 +9,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
 </head>
 <body>
     <nav id="navbar-example2" class="navbar navbar-light bg-light">
@@ -44,8 +45,11 @@
         </ul>
     </nav>
     {{{body}}}
-    <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
+
+
+    <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -54,24 +58,26 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            <div class="modal-body">
-                {{!-- <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" class="img-thumbnail col-md-6"> --}}
-                <p id="age"></p>
-                <p id="activity"></p>
-                <p id="city"></p>
-                <p id="yearsofExperience"></p>
-                <p id="descriptionActivity"></p>
-            </div>
+
+                <div class="modal-body">
+                    <img id="match-img"
+                        src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""
+                        class="img-thumbnail col-md-6">
+                    <p id="age"></p>
+                    <p id="activity"></p>
+                    <p id="city"></p>
+                    <p id="yearsofExperience"></p>
+                    <p id="descriptionActivity"></p>
+                </div>
+
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary active" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success active">Contact Me</button>
+                    <button type="button" class="contactme btn btn-success active">Contact Me</button>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
 
     <!-- Javascript links -->
@@ -89,7 +95,7 @@
     <!-- google api -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
-<<<<<<< HEAD
+
 
 
     <script>
@@ -97,8 +103,8 @@
             $(".extendedInfo").on("click", function (e) {
                 e.preventDefault();
                 const id = $(this).attr("data-id")
-                $.get("/profiles/"+id).then(function(data){
-              
+                $.get("/profiles/" + id).then(function (data) {
+
                     $("#exampleModalLongTitle").text(data.name);
                     $("#match-img").attr("src", data.photolink);
                     $("#age").text(data.age);
@@ -108,15 +114,35 @@
                     $("#descriptionActivity").text(data.descriptionActivity);
 
                     $('#myModal').modal('toggle');
-                });  
+                });
             });
+
+            $(".contactme").on("click", function (e) {
+                e.preventDefault();
+                const id = $(this).attr("data-id")
+                $.get("/profiles/" + id).then(function (data) {
+
+
+
+                    $('#myModal2').modal('toggle');
+                });
+            });
+
+            //badri's line's of code starts here//
+            $('.submitbtn').on('click', function(event){
+            event.preventDefault()
+            console.log('i am clicked')
+
+            $.ajax({url: '/login', method: 'get'}).then(function(res){
+            console.log("this is the response from main ", res);
+            })
+        });
 
         });
 
     </script>
 
-=======
->>>>>>> fd47a4907d2d16c6591f9e945e207b7b744dedbe
+
 </body>
 
 </html>

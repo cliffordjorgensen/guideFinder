@@ -17,7 +17,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "@Apartment7",
     database: "guidefinder_db"
 });
 
@@ -63,6 +63,18 @@ app.get("/profiles/:id", (req, res) => {
         res.render('login', {login});
     });
 // });
+    
+    app.post('/api/login/:email/:password', function(req, res){
+        const email = req.body.email;
+        const password = req.body.password;
+        connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, users){
+            if (err) throw err;
+            console.log(users)
 
+            // res.json(result);
+            // console.log(result);
+        })
+        res.json(res);
+    })
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT)});
