@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-
 <body>
     <nav id="navbar-example2" class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Home</a>
@@ -20,6 +19,17 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#mdo">Contact us</a>
+            </li>
+            <!--sign in options -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Log In</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item guide" href="#one">Guide</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item traveler" href="#two">Traveler</a>
+                   
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
@@ -34,7 +44,6 @@
         </ul>
     </nav>
     {{{body}}}
-
     <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -46,14 +55,13 @@
                     </button>
                 </div>
             <div class="modal-body">
-                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" class="img-thumbnail col-md-6">
+                {{!-- <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" class="img-thumbnail col-md-6"> --}}
                 <p id="age"></p>
                 <p id="activity"></p>
                 <p id="city"></p>
                 <p id="yearsofExperience"></p>
                 <p id="descriptionActivity"></p>
             </div>
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary active" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-success active">Contact Me</button>
@@ -78,31 +86,6 @@
     <!-- google api -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
-
-
-    <script>
-        $(document).ready(function () {
-            $(".extendedInfo").on("click", function (e) {
-                e.preventDefault();
-                const id = $(this).attr("data-id")
-                $.get("/profiles/"+id).then(function(data){
-              
-                    $("#exampleModalLongTitle").text(data.name);
-                    $("#match-img").attr("src", data.photolink);
-                    $("#age").text(data.age);
-                    $("#activity").text(data.activity);
-                    $("#city").text(data.city);
-                    $("#yearsofExperience").text(data.yearsofExperience);
-                    $("#descriptionActivity").text(data.descriptionActivity);
-
-                    $('#myModal').modal('toggle');
-                });  
-            });
-
-        });
-
-    </script>
-
 </body>
 
 </html>
