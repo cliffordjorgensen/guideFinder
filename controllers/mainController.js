@@ -1,10 +1,7 @@
-// // copy and paste from MVC example
 
+var express = require("express");
+var router = express.Router();
 
-
-
-// var express = require("express");
-// var router = express.Router();
 
 // // Import the model (guide.js) to use its database functions.
 // var guide = require("../models/main.js");
