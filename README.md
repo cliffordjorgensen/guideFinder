@@ -31,11 +31,38 @@ After account creation the traveler will have the ability to chat with the guide
   
 ## Guide Profile
 
-  * Navigation Bar
-  *
+  * Navigation Bar at the top
+  * Full page profile layout 
+  * Guide fills in information when creating guide account
+  * Bottom of profile has a button to contact this guide
+  * Traveler clicks on this button to make a connection
+  * If traveler has account then chat interface appears
+  * Else traveler is prompted to make an account.
   
   
   
+  
+# to-do
+
+  * maps and markers for nearby guides
+  * chat functionality 
+  * validation for guides and users authentication for guide connection (tokens)
+  * actual profile creation (guides, trvelers) through sign-up nav bar tab
+  * appending guide info to home carousel cards without overflowing 
+  
+  
+current work assignments:
+
+Badri: after guide authentication, guide re-direction.
+
+CLiff: MAPS cluster of guide markers collect lat and lng data for guide.
+
+Adam: CHAT(socket.io)
+
+Julianna: user accounts
+
+
+CSS: anyone who cares
 
 
 
@@ -44,23 +71,13 @@ After account creation the traveler will have the ability to chat with the guide
 
 
 
-when traveler wants to connect with guide, prompt traveler for account creation.(modal)
-basic info just enough stuff.
-    Guide account has a profile this is where the guide "sells" themselves (profile api).
-
+Guide account has a profile this is where the guide "sells" themselves (profile api).
 eventually travelre can create account with google/facebook
-
 modal pops up to take payment info through paypal or other medium
-
-once payment is secure guide contact info is displayed and send a message to the guide in question letting them know a traveler wants to connect.
-
-once a plan is agreed upon the guide gives the raveler a price for the experience and the payment is processed through the app.
-
 when the meeting happens the app should notify the guide and trveler that they are close to each other.
+after the experience when the traveler and guide split prompt the traveler for a guide rating(modal), and the guide gets his payment.
 
-after the ecxperience when the travelr and guide split prompt the travelr for a guide rating(modal), and the guide gets his payment.
-
-API's
+## API's
 
 google maps (geolocater)
 profile apis / survery apis
@@ -69,25 +86,14 @@ chat api?
 payment (fake for now)
 ratings/reviews(yelp api)
 
-Technology 
+## Technology 
 
 socket.io chat capability within the app after traveler sign-up.
 cookie and express session(sign-in persistence)
 bootstrap
 
 
-current work assignments:
 
-Badri:l database creation, for travelers and guides
-
-CLiff: create a scroll area for profiles, then work on map markers 
-
-Adam: routes skeleton, chat stuff
-
-Julianna: profiles database, fake profiles.
-
-
-CSS: anyone who cares
 
 
  

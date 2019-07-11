@@ -36,9 +36,19 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
+<<<<<<< HEAD
 $('.btn').on('click', function(event){
     event.preventDefault()
     console.log('i am clicked')
+=======
+$(".guide").on('click', function(event) {
+    console.log("guide");
+})
+$('.traveler').on('click', function(event) {
+    console.log('traveler')
+})
+
+>>>>>>> d999c31ef66e7948e68f61d90002eb803f209fcc
 
 $.ajax({url: '/login', method: 'get'}).then(function(res){
         console.log("this is the response from map ", res);
