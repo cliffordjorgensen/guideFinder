@@ -2,28 +2,26 @@
 <div id="map"></div>
 
 <!-- keyword input bar -->
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <div class="input-group">
-            <input type="text" class="form-control" id="search-term" placeholder="Search term" aria-label="traveler search term"
-                aria-describedby="button-addon4">
-            <div class="input-group-append" id="button-addon4">
-                <button class="btn btn-outline-secondary" type="button">Filters</button>
-                <button class="btn btn-outline-secondary" type="button">Submit</button>
-            </div>
+<div class="jumbotron jumbotron-fluid intro-jumbotron clearfix">
+    <div class="input-group">
+        <input type="text" class="form-control" id="search-term" placeholder="Search term" aria-label="traveler search term"
+            aria-describedby="button-addon4">
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-outline-secondary" type="button">Filters</button>
+            <button class="btn btn-outline-secondary" type="button">Submit</button>
         </div>
     </div>
 </div>
 
-
-
+<div class="profiles-button">
+        <a href="/profiles" style="text-decoration:none">
+        <button type="button" class="btn btn-secondary btn-sm btn-block" class="extendedInfo" id="profilesBtn">
+            <h2 class="text-center mb-3">Guide Profiles</h2></button>
+        </a>
+</div>
 <!-- profile carousel -->
 <div class="container-fluid">
-    <div class="profiles-button"><a href="/profiles" style="text-decoration:none">
-    <button type="button" class="btn btn-secondary btn-lg btn-block" class="extendedInfo">
-        <h2 class="text-center mb-3">Guide Profiles</h2></button>
-        </a>
-    </div>
+    
     <div id="myCarousel" class="carousel slide" data-ride="carousel">    
         <div class="carousel-inner row w-100 mx-auto">
             <div class="carousel-item col-md-4 active">

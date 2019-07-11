@@ -36,10 +36,10 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
-$(".guide").on('click', function(event){
+$(".guide").on('click', function(event) {
     console.log("guide");
 })
-$('.traveler').on('click', function(event){
+$('.traveler').on('click', function(event) {
     console.log('traveler')
 })
 
