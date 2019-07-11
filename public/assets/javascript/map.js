@@ -34,10 +34,14 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
-}
+};
 
-
-
+$(".guide").on('click', function(event){
+    console.log("guide");
+})
+$('.traveler').on('click', function(event){
+    console.log('traveler')
+})
 
 
 // function initMap() {
