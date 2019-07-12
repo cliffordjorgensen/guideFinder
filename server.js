@@ -62,48 +62,114 @@ app.get("/profiles/:id", (req, res) => {
     })
 });
 
-connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
-    
-    const response =[]
-    const tempPics = ""
-    data.forEach(function (e){
-        const temp = e.city + " " + e.activity
-        response.push(temp)
-    })
-    
-    response.forEach(function(elem){
-        pexelsClient.search(elem, 10, 1)
-    .then(function (result) {
-        for (let i = 0; i < result.photos.length; i++) {
-            const temp = result.photos[i].url
-            // console.log(temp);
-            tempPics += temp + ","
-            if( i % 5 === 0){
-                tempPics += "/n"
-                
-            }
-         
-        } 
-        console.log(tempPics);
-
-    }).
-    catch(function (e) {
-        // console.err(e);
-
-    });
-    })
-
-    fs.appendFile("sfpics.csv", JSON.stringify(tempPics), function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("pics updated successfull");
-
-    });
-}); 
-app.get('/login', (req, res)=>{
-  res.render('login', {login});
+app.get("/login", function(req, res) {
+    res.render("login")
 });
+
+app.get("/loginUser", function(req, res) {
+    res.render("loginUser")
+})
+
+
+//-------------------------guideLogin -----------------------------------------
+
+app.post('/login', (req, res) => {
+    const username  = req.body.username;
+    const password  = req.body.password;
+    const query     = "SELECT * FROM guideinfo WHERE username = ?";
+    connection.query(query, username, (err, users) => {
+        if(err) throw err;
+        if(users.length <= 0) {
+            res.json({ error: "No user with that email"});
+        } else {
+            const user = users[0];
+            if(user.password === password) {
+                res.json(user);
+            }
+        }
+    });
+});
+
+app.put('/login/:guideId', (req, res) => {
+    const id = req.params.guideId;
+    const query = "UPDATE guideInfo SET name = ? WHERE id = ?;"
+
+    connection.query('UPDATE guideinfo ')
+});
+
+
+//----------------------------------------------------------------------------------//
+
+//-------------------------userLogin -----------------------------------------
+
+app.post('/loginUser', (req, res) => {
+    const username  = req.body.username;
+    const password  = req.body.password;
+    const query     = "SELECT * FROM userCredential WHERE accountname = ?";
+    connection.query(query, username, (err, users) => {
+         if(err) throw err;
+        if(users.length <= 0) {
+            res.json({ error: "No user with that email"});
+        } else {
+            const user = users[0];
+            if(user.userpassword === password) {
+                res.json(user);
+            }
+        }
+    });
+});
+
+app.put('/loginUser/:userId', (req, res) => {
+    const id = req.params.guideId;
+    const query = "UPDATE userCredential SET name = ? WHERE id = ?;"
+
+    connection.query('UPDATE guideinfo ')
+});
+
+
+//----------------------------------------------------------------------------------//
+
+
+// connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
+    
+//     const response =[]
+//     const tempPics = ""
+//     data.forEach(function (e){
+//         const temp = e.city + " " + e.activity
+//         response.push(temp)
+//     })
+    
+//     response.forEach(function(elem){
+//         pexelsClient.search(elem, 10, 1)
+//     .then(function (result) {
+//         for (let i = 0; i < result.photos.length; i++) {
+//             const temp = result.photos[i].url
+//             // console.log(temp);
+//             tempPics += temp + ","
+//             if( i % 5 === 0){
+//                 tempPics += "/n"
+                
+//             }
+         
+//         } 
+//         console.log(tempPics);
+
+//     }).
+//     catch(function (e) {
+//         // console.err(e);
+
+//     });
+//     })
+
+//     fs.appendFile("sfpics.csv", JSON.stringify(tempPics), function (err) {
+//         if (err) {
+//             return console.log(err);
+//         }
+//         console.log("pics updated successfull");
+
+//     });
+// }); 
+
 
 app.listen(PORT, function() {
   console.log("App now listening at localhost:" + PORT)});

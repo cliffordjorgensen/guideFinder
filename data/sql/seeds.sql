@@ -1,4 +1,4 @@
-INSERT INTO guideinfo  (name, photolink, age, activity, city, yearsofExperience, descriptionActivity) 
+INSERT INTO guideinfo (guide)  (name, photolink, age, activity, city, yearsofExperience, descriptionActivity) 
 VALUES ("Lucas Brennan", 
 "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", 
 27, 
@@ -8,7 +8,9 @@ VALUES ("Lucas Brennan",
 "San Francisco Love Tour: On this San Francisco tour, I will drive you down the very steep and crooked Lombard Street, 
 and around neighborhoods such as the Mission, the Castro, and North Beach without worrying about getting around or parking. 
 we will venture down streets other bigger bus tours can’t go, and get in the loving spirit the City by 
-the Bay is well known for as you spot famous musicians’ homes while listening to classic songs." ),
+the Bay is well known for as you spot famous musicians’ homes while listening to classic songs.",
+"example@gmail.com",
+"abc" ),
 ("Logan Smith", 
 "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 32, 
@@ -65,3 +67,12 @@ VALUES("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/0
 "https://images.pexels.com/photos/672916/pexels-photo-672916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 "https://images.pexels.com/photos/1119075/pexels-photo-1119075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
 "https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+
+
+----------userLogin--------------
+INSERT INTO userCredential (accountname, userpassword)
+VALUES ("hellorn", "123"),
+       ("lindzy26", "456"),
+       ("juanperez", "789"),
+       ("michelw", "956"),
+       ("cvelez", "712");

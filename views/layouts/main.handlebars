@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
 </head>
+
 <body>
     <nav id="navbar-example2" class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Home</a>
@@ -29,7 +30,7 @@
                     <a class="dropdown-item guide" href="#one">Guide</a>
                     <div role="separator" class="dropdown-divider"></div>
                     <a class="dropdown-item traveler" href="#two">Traveler</a>
-                   
+
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -73,7 +74,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary active" data-dismiss="modal">Close</button>
-                    <button type="button" class="contactme btn btn-success active">Contact Me</button>
+                    <button type="button" id="contactMe" class="btn btn-success active">Contact Me</button>
                 </div>
             </div>
         </div>
@@ -99,7 +100,7 @@
 
 
     <script>
-        $(document).ready(function () { 
+        $(document).ready(function () {
             $(".extendedInfo").on("click", function (e) {
                 e.preventDefault();
                 const id = $(this).attr("data-id")
@@ -117,18 +118,16 @@
                 });
             });
 
-            $(".contactme").on("click", function (e) {
+
+            $("#contactMe").on("click", function (e) {
+                console.log("isaac was here")
                 e.preventDefault();
-                const id = $(this).attr("data-id")
-                $.get("/profiles/" + id).then(function (data) {
-
-
-
-                    $('#myModal2').modal('toggle');
-                });
+                window.location.replace("/loginUser")
             });
 
+
         });
+
 
     </script>
 
