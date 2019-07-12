@@ -8,14 +8,13 @@ name VARCHAR (255) NULL,
 photolink VARCHAR(255) NULL,
 age INT NULL,
 activity VARCHAR(500) NULL,
--- city VARCHAR(255) NULL,
+city VARCHAR(255) NULL,
 yearsofExperience INT NULL,
 descriptionActivity VARCHAR(9001) NULL,
 password VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL,
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
-
 PRIMARY KEY (guideID)); 
 
 SELECT * from guideinfo;
@@ -52,18 +51,9 @@ userpassword VARCHAR(255) NOT NULL,
 searchTerm VARCHAR(9001),   
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
-<<<<<<< HEAD
-PRIMARY KEY (guideID)); 
-);
-
-CREATE TABLE login(
-guideID INT NOT NULL AUTO_INCREMENT,
-email VARCHAR (255) NOT NULL,
-password VARCHAR (55) NOT NULL,
-PRIMARY KEY (guideID));
-=======
 PRIMARY KEY (userID));
 
 SELECT * from userCredential;
->>>>>>> 9edf56cde1ec6c66fd4bdc805366aaedf11eac55
+
+
 

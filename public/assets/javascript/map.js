@@ -21,9 +21,6 @@ function initMap() {
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-            // Add some markers to the map.
-            // Note: The code uses the JavaScript Array.prototype.map() method to
-            // create an array of markers based on a given "locations" array.
             // The map() method here has nothing to do with the Google Maps API.
             var markers = locations.map(function(location, i) {
                 return new google.maps.Marker({
@@ -53,6 +50,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
+<<<<<<< HEAD
+$(".guide").on('click', function(event) {
+    console.log("guide");
+})
+$('.traveler').on('click', function(event) {
+    console.log('traveler')
+})
+=======
+>>>>>>> a2b7672fc799adc92cd51eddc6e9460ec03c98c2
 
 
 var locations = [{
