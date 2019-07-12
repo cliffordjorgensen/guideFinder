@@ -73,7 +73,7 @@ app.get("/profiles/:id", (req, res) => {
             } else {
                 // res.send("valid")
                 // console.log(results);
-                res.render("guideProfile")
+                res.render("home")
             }
             console.log(query.sql, results);
         })
