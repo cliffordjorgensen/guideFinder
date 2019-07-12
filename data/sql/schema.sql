@@ -37,5 +37,7 @@ age INT NULL,
 searchTerm VARCHAR(9001),   
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
-PRIMARY KEY (guideID)); 
+PRIMARY KEY (traveler_id)); 
 )
+
+SELECT * from travelersinfo;
