@@ -26,7 +26,7 @@ btn.addEventListener('click', () => {
 // On "enter" (13) keypress, send message, then clear fields
 document.addEventListener('keypress', (e) => {
     var key = e.which;
-    if (key === 13) {
+    if (key === 13 && message.value !== "") {
         socket.emit('chat', {
             message: message.value,
             username: username.value
