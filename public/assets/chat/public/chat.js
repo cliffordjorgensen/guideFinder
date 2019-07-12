@@ -9,7 +9,7 @@ var message = document.getElementById('message'),
     output = document.getElementById('output'),
     feedback = document.getElementById('feedback');
 
-// TODO: Clear text from message field after enter
+// Clear text from message field after enter
 function clearFields() {
     document.getElementById('message').value = "";
 };
@@ -26,7 +26,7 @@ btn.addEventListener('click', () => {
 // On "enter" (13) keypress, send message, then clear fields
 document.addEventListener('keypress', (e) => {
     var key = e.which;
-    if (key === 13) {
+    if (key === 13 && message.value != "") {
         socket.emit('chat', {
             message: message.value,
             username: username.value
