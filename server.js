@@ -2,6 +2,12 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+const PexelsAPI = require('pexels-api-wrapper');
+const pexelsClient = new PexelsAPI("563492ad6f91700001000001e4518284000e41a3beb1ab31ef33e0a9");
+const fs = require("fs");
+const mysql = require("mysql");
+
 app.use(express.static("public"));
 
 
@@ -117,10 +123,6 @@ app.post('/loginUser', (req, res) => {
             const user = users[0];
             if(user.userpassword === password) {
                 res.json(user);
-<<<<<<< HEAD
-
-=======
->>>>>>> c4fb4b50f4a5afc708525b2db9043c2c89c2f4d1
             }
         }
     });
