@@ -65,3 +65,10 @@ VALUES("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/0
 "https://images.pexels.com/photos/672916/pexels-photo-672916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 "https://images.pexels.com/photos/1119075/pexels-photo-1119075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
 "https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+
+INSERT INTO login(email, password) VALUES ('lucas.brennan@gmail.com', 'hello');
+INSERT INTO login(email, password) VALUES ('logan.smith@yahoo.com', 'hello');
+INSERT INTO login(email, password) VALUES ('olivia.johnson@gmail.com', 'hello');
+INSERT INTO login(email, password) VALUES ('tiffany.allen@gmail.com', 'hello');
+INSERT INTO login(email, password) VALUES ('michael.dunder@gmail.com', 'hello');
+INSERT INTO login(email, password) VALUES ('norman.malone@hotmail.com', 'hello');
