@@ -21,10 +21,7 @@ const connection = mysql.createConnection({
     database: "guidefinder_db"
 });
 
-var login = [{
-    username: 'logansmith',
-    password: 'password'
-}]
+
 connection.connect(function(err) {
     if (err) {
         console.error("error connecting: " + err.stack);
@@ -65,19 +62,18 @@ app.get("/profiles/:id", (req, res) => {
 // });
     
     app.post('/login', function(req, res){
-        console.log(req.body)
+        // console.log(req.body)
         const email = req.body.email;
         const password = req.body.password;
         const query = connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, results){
             if (err) throw err;
-
-            
             if (results.length === 0) {
                 res.status(401).send("invalid")
                 // res.render()
             } else {
                 // res.send("valid")
-                res.render("home")
+                // console.log(results);
+                res.render("guideProfile")
             }
             console.log(query.sql, results);
         })
