@@ -7,7 +7,6 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -17,7 +16,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "@Apartment7",
+    password: "password",
     database: "guidefinder_db"
 });
 
@@ -29,22 +28,18 @@ connection.connect(function(err) {
     }
     console.log("connected as id " + connection.threadId);
 });
-
-
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
         console.log(data);
         res.render('home', { guideinfo: data });
     })
 });
-
 app.get("/profiles", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
         console.log(data);
         res.render('profiles', { guideinfo: data });
     })
 });
-
 app.get("/profiles/:id", (req, res) => {
     const id = req.params.id
     console.log(id)
@@ -54,8 +49,6 @@ app.get("/profiles/:id", (req, res) => {
         res.send(data[0]);
     })
 });
-
-
 app.get("/login", function(req, res) {
     res.render("login")
 });
@@ -63,8 +56,6 @@ app.get("/login", function(req, res) {
 app.get("/loginUser", function(req, res) {
     res.render("loginUser")
 })
-
-
 //-------------------------guideLogin -----------------------------------------
 
 app.post('/login', (req, res) => {
@@ -82,25 +73,26 @@ app.post('/login', (req, res) => {
             }
         }
     });
-<<<<<<< HEAD
-// });
-    
-    app.post('/login', function(req, res){
-        // console.log(req.body)
-        const email = req.body.email;
-        const password = req.body.password;
-        const query = connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, results){
-            if (err) throw err;
-            if (results.length === 0) {
-                res.status(401).send("invalid")
-                // res.render()
-            } else {
-                // res.send("valid")
-                // console.log(results);
-                res.render("home")
-=======
 });
 
+app.post('/login', function(req, res) {
+    // console.log(req.body)
+    const email = req.body.email;
+    const password = req.body.password;
+    const query = connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, results) {
+        if (err) throw err;
+        if (results.length === 0) {
+            res.status(401).send("invalid")
+                // res.render()
+
+        } else {
+            // res.send("valid")
+            // console.log(results);
+            res.render("home")
+        }
+        console.log(query.sql, results);
+    })
+})
 app.put('/login/:guideId', (req, res) => {
     const id = req.params.guideId;
     const query = "UPDATE guideInfo SET name = ? WHERE id = ?;"
@@ -125,7 +117,6 @@ app.post('/loginUser', (req, res) => {
             const user = users[0];
             if(user.userpassword === password) {
                 res.json(user);
->>>>>>> 9edf56cde1ec6c66fd4bdc805366aaedf11eac55
             }
         }
     });
@@ -199,5 +190,7 @@ app.put('/loginUser/:userId', (req, res) => {
 //             console.log(query.sql, results);
 //         })
 //     })
+
 app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT)});
+    console.log("App now listening at localhost:" + PORT)
+});
