@@ -1,26 +1,22 @@
 <!-- google map -->
 <div id="map"></div>
-
 <!-- keyword input bar -->
-<div class="jumbotron jumbotron-fluid intro-jumbotron clearfix">
-    <div class="input-group">
-        <input type="text" class="form-control" id="search-term" placeholder="Search term" aria-label="traveler search term"
-            aria-describedby="button-addon4">
-        <div class="input-group-append" id="button-addon4">
-            <button class="btn btn-outline-secondary" type="button">Filters</button>
-            <button class="btn btn-outline-secondary" type="button">Submit</button>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search term" aria-label="traveler search term"
+                aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="button">Filters</button>
+                <button class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
         </div>
     </div>
 </div>
-
-<div class="profiles-button">
-        <a href="/profiles" style="text-decoration:none">
-        <button type="button" class="btn btn-secondary btn-sm btn-block" class="extendedInfo" id="profilesBtn">
-            <h2 class="text-center mb-3">Guide Profiles</h2></button>
-        </a>
-</div>
 <!-- profile carousel -->
 <div class="container-fluid">
+    <button type="button" class="btn btn-secondary btn-lg btn-block" class="extendedInfo">
+        <h2 class="text-center mb-3">Guide Profiles</h2></button>
     
     <div id="myCarousel" class="carousel slide" data-ride="carousel">    
         <div class="carousel-inner row w-100 mx-auto">
@@ -28,15 +24,15 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src={{active.photolink}} class="float-left col-md-8">
+                            <img src={{photolink}} class="float-left col-md-8">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{active.name}}</h5>
-                                <p class="card-text">{{active.age}}</p>
-                                <p class="card-text">{{active.activity}}</p>
-                                <p class="card-text">{{active.city}}</p>
-                                <p class="card-text">{{active.yearsOfExperience}}</p>
+                                <h5 class="card-title">{{name}}</h5>
+                                <p class="card-text">{{age}}</p>
+                                <p class="card-text">{{activity}}</p>
+                                <p class="card-text">{{city}}</p>
+                                <p class="card-text">{{yearsOfExperience}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -63,7 +59,8 @@
                     </div>
                 </div>
             </div>
-            {{/each}} 
+            {{/each}}
+        </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>

@@ -1,4 +1,4 @@
-INSERT INTO guideinfo (guide)  (name, photolink, age, activity, city, yearsofExperience, descriptionActivity) 
+INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password) 
 VALUES ("Lucas Brennan", 
 "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", 
 27, 
@@ -9,7 +9,7 @@ VALUES ("Lucas Brennan",
 and around neighborhoods such as the Mission, the Castro, and North Beach without worrying about getting around or parking. 
 we will venture down streets other bigger bus tours can’t go, and get in the loving spirit the City by 
 the Bay is well known for as you spot famous musicians’ homes while listening to classic songs.",
-"example@gmail.com",
+"lucasabc",
 "abc" ),
 ("Logan Smith", 
 "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
@@ -19,7 +19,9 @@ the Bay is well known for as you spot famous musicians’ homes while listening 
 5, 
 "Best of Berkeley Gourmet Food Tour: On this gourmet food walking tour of Berkeley’s ‘Gourmet Ghetto,’ 
 venture behind the scenes of the North Shattuck district. Food tastings include gourmet cheeses, chocolates, gelato, pizza,
-sandwiches, and wine at notable venues committed to sustainable and organic cuisine of this San Francisco Bay Area enclave." ),
+sandwiches, and wine at notable venues committed to sustainable and organic cuisine of this San Francisco Bay Area enclave.",
+"loganabc",
+"def" ),
 ("Olivia Johnson", 
 
 "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
@@ -29,7 +31,9 @@ sandwiches, and wine at notable venues committed to sustainable and organic cuis
 3, 
 "Napa wine Tour: We will welcome you to explore in one day, three of the best wineries in Sonoma Valley 
 (Ram's Gate, Winery Sixteen 600 and Larson Family Vineyards. We'll enjoy and epic catered lunch at our second stop. 
-Payment for wine tasting at each location, anticipate between $25-40 in tastings per person per winery" ),
+Payment for wine tasting at each location, anticipate between $25-40 in tastings per person per winery",
+"oliviaabc",
+"abc" ),
 ("Tiffany Allen", 
 "https://images.pexels.com/photos/975680/pexels-photo-975680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 30, 
@@ -37,7 +41,9 @@ Payment for wine tasting at each location, anticipate between $25-40 in tastings
 "Oakland", 
 6, 
 "Crafting with Leather: Make your own personalized leather valettray that you can use in the home, officer or abroad. 
-Learn leather craft basics and how to consttruct a dimensional and functional piece, using just your hands and manual tools." ),
+Learn leather craft basics and how to consttruct a dimensional and functional piece, using just your hands and manual tools.",
+"tiffanyabc",
+"def"),
 ("Michael Dunder",
 "https://nquerysolutions.com/wp-content/uploads/2017/10/pexels-photo-551653-1.jpeg",
 39,
@@ -47,7 +53,9 @@ Learn leather craft basics and how to consttruct a dimensional and functional pi
 "I’ll show you things you won’t see from others. Choose from several tours or I’ll create a custom itinerary. 
 I pride myself in developing a unique itinerary to meet your interests, and welcome children and senior citizens or those needing assistance. 
 You’ll tour the Oakland in a new Lexus sedan which seats up to 4 passengers very comfortably with fantastic legroom. 
-The sedan allows us access to neighborhoods and viewpoints that are off limits to larger van and bus tours." ),
+The sedan allows us access to neighborhoods and viewpoints that are off limits to larger van and bus tours.",
+"michaelabc",
+"abc"),
 ("Norman Malone",
 "https://images.pexels.com/photos/346824/pexels-photo-346824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
 27,
@@ -55,7 +63,9 @@ The sedan allows us access to neighborhoods and viewpoints that are off limits t
 "San Mateo",
 3,
 "I offer private tours of San Francisco, Napa Wine country, Pacific Coastline and National Parks, 
-Silicon Valley, and Monterey and Santa Cruz. I also offer completely customizable private tours suitable to your needs and wishes.");
+Silicon Valley, and Monterey and Santa Cruz. I also offer completely customizable private tours suitable to your needs and wishes.",
+"normanabc",
+"def");
 
 
 
@@ -68,14 +78,6 @@ VALUES("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/0
 "https://images.pexels.com/photos/1119075/pexels-photo-1119075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
 "https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 
-<<<<<<< HEAD
-INSERT INTO login(email, password) VALUES ('lucas.brennan@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('logan.smith@yahoo.com', 'hello');
-INSERT INTO login(email, password) VALUES ('olivia.johnson@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('tiffany.allen@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('michael.dunder@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('norman.malone@hotmail.com', 'hello');
-=======
 
 ----------userLogin--------------
 INSERT INTO userCredential (accountname, userpassword)
@@ -84,4 +86,3 @@ VALUES ("hellorn", "123"),
        ("juanperez", "789"),
        ("michelw", "956"),
        ("cvelez", "712");
->>>>>>> 9edf56cde1ec6c66fd4bdc805366aaedf11eac55
