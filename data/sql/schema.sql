@@ -38,4 +38,11 @@ searchTerm VARCHAR(9001),
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
 PRIMARY KEY (guideID)); 
-)
+);
+
+CREATE TABLE login(
+guideID INT NOT NULL AUTO_INCREMENT,
+email VARCHAR (255) NOT NULL,
+password VARCHAR (55) NOT NULL,
+PRIMARY KEY (guideID));
+
