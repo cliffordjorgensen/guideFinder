@@ -36,8 +36,9 @@ connection.connect(function(err) {
 });
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
-        console.log(data);
-        res.render('home', { guideinfo: data });
+        const active = data[0]
+        const restOfGuides = data.slice(1)
+        res.render('home', { guideinfo: restOfGuides, active: active });
     })
 });
 app.get("/profiles", (req, res) => {
@@ -60,21 +61,21 @@ app.get("/login", function(req, res) {
 });
 
 app.get("/loginUser", function(req, res) {
-    res.render("loginUser")
-})
-//-------------------------guideLogin -----------------------------------------
+        res.render("loginUser")
+    })
+    //-------------------------guideLogin -----------------------------------------
 
 app.post('/login', (req, res) => {
-    const username  = req.body.username;
-    const password  = req.body.password;
-    const query     = "SELECT * FROM guideinfo WHERE username = ?";
+    const username = req.body.username;
+    const password = req.body.password;
+    const query = "SELECT * FROM guideinfo WHERE username = ?";
     connection.query(query, username, (err, users) => {
-        if(err) throw err;
-        if(users.length <= 0) {
-            res.json({ error: "No user with that email"});
+        if (err) throw err;
+        if (users.length <= 0) {
+            res.json({ error: "No user with that email" });
         } else {
             const user = users[0];
-            if(user.password === password) {
+            if (user.password === password) {
                 res.json(user);
             }
         }
@@ -112,16 +113,16 @@ app.put('/login/:guideId', (req, res) => {
 //-------------------------userLogin -----------------------------------------
 
 app.post('/loginUser', (req, res) => {
-    const username  = req.body.username;
-    const password  = req.body.password;
-    const query     = "SELECT * FROM userCredential WHERE accountname = ?";
+    const username = req.body.username;
+    const password = req.body.password;
+    const query = "SELECT * FROM userCredential WHERE accountname = ?";
     connection.query(query, username, (err, users) => {
-         if(err) throw err;
-        if(users.length <= 0) {
-            res.json({ error: "No user with that email"});
+        if (err) throw err;
+        if (users.length <= 0) {
+            res.json({ error: "No user with that email" });
         } else {
             const user = users[0];
-            if(user.userpassword === password) {
+            if (user.userpassword === password) {
                 res.json(user);
             }
         }
@@ -140,14 +141,14 @@ app.put('/loginUser/:userId', (req, res) => {
 
 
 // connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
-    
+
 //     const response =[]
 //     const tempPics = ""
 //     data.forEach(function (e){
 //         const temp = e.city + " " + e.activity
 //         response.push(temp)
 //     })
-    
+
 //     response.forEach(function(elem){
 //         pexelsClient.search(elem, 10, 1)
 //     .then(function (result) {
@@ -157,9 +158,9 @@ app.put('/loginUser/:userId', (req, res) => {
 //             tempPics += temp + ","
 //             if( i % 5 === 0){
 //                 tempPics += "/n"
-                
+
 //             }
-         
+
 //         } 
 //         console.log(tempPics);
 
@@ -178,7 +179,7 @@ app.put('/loginUser/:userId', (req, res) => {
 
 //     });
 // }); 
-    
+
 //     app.post('/login', function(req, res){
 //         // console.log(req.body)
 //         const email = req.body.email;

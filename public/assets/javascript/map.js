@@ -50,17 +50,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
-<<<<<<< HEAD
-$(".guide").on('click', function(event) {
-    console.log("guide");
-})
-$('.traveler').on('click', function(event) {
-    console.log('traveler')
-})
-=======
->>>>>>> a2b7672fc799adc92cd51eddc6e9460ec03c98c2
-
-
 var locations = [{
     lat: 37.7749,
     lng: -122.4194
@@ -86,4 +75,3 @@ var locations = [{
     lat: 37.7790,
     lng: -122.4101
 }, ]
-
