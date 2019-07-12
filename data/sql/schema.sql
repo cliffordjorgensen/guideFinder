@@ -11,11 +11,15 @@ activity VARCHAR(500) NULL,
 -- city VARCHAR(255) NULL,
 yearsofExperience INT NULL,
 descriptionActivity VARCHAR(9001) NULL,
+password VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
+
 PRIMARY KEY (guideID)); 
 
 SELECT * from guideinfo;
+
 USE guidefinder_db;
 CREATE TABLE pictures(
 pictureID INT AUTO_INCREMENT,
@@ -30,12 +34,25 @@ FOREIGN KEY (guideID) REFERENCES guideinfo(guideID)
 
 SELECT * from pictures;
 
-CREATE TABLE travelersinfo(
-traveler_id INT AUTO_INCREMENT,
-name VARCHAR (255) NULL,
-age INT NULL,
+
+USE guideinfo_db;
+CREATE TABLE login(
+name VARCHAR(255) NOT NULL,
+userId INT NOT NULL AUTO_INCREMENT,
+email VARCHAR (255) NOT NULL,
+password VARCHAR (55) NOT NULL,
+PRIMARY KEY (userId));
+
+
+USE guidefinder_db;
+CREATE TABLE userCredential(
+userID INT AUTO_INCREMENT,
+accountname VARCHAR (255) NULL,
+userpassword VARCHAR(255) NOT NULL,
 searchTerm VARCHAR(9001),   
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
-PRIMARY KEY (guideID)); 
-)
+PRIMARY KEY (userID));
+
+SELECT * from userCredential;
+

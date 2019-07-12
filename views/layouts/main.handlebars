@@ -74,7 +74,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary active" data-dismiss="modal">Close</button>
-                    <button type="button" class="contactme btn btn-success active">Contact Me</button>
+                    <button type="button" id="contactMe" class="btn btn-success active">Contact Me</button>
                 </div>
             </div>
         </div>
@@ -96,9 +96,6 @@
     <!-- google api -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
     <script src= "https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
-
-
-
     <script>
         $(document).ready(function () {
             $(".extendedInfo").on("click", function (e) {
@@ -118,25 +115,14 @@
                 });
             });
 
-            $(".contactme").on("click", function (e) {
+
+            $("#contactMe").on("click", function (e) {
+                console.log("isaac was here")
                 e.preventDefault();
-                const id = $(this).attr("data-id")
-                $.get("/profiles/" + id).then(function (data) {
-
-
-
-                    $('#myModal2').modal('toggle');
-                });
+                window.location.replace("/loginUser")
             });
-
-            //badri's line's of code starts here//
-
-
         });
-
     </script>
-
-
 </body>
 
 </html>
