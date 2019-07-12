@@ -82,23 +82,6 @@ app.post('/login', (req, res) => {
             }
         }
     });
-<<<<<<< HEAD
-// });
-    
-    app.post('/login', function(req, res){
-        // console.log(req.body)
-        const email = req.body.email;
-        const password = req.body.password;
-        const query = connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, results){
-            if (err) throw err;
-            if (results.length === 0) {
-                res.status(401).send("invalid")
-                // res.render()
-            } else {
-                // res.send("valid")
-                // console.log(results);
-                res.render("home")
-=======
 });
 
 app.put('/login/:guideId', (req, res) => {
@@ -125,7 +108,6 @@ app.post('/loginUser', (req, res) => {
             const user = users[0];
             if(user.userpassword === password) {
                 res.json(user);
->>>>>>> 9edf56cde1ec6c66fd4bdc805366aaedf11eac55
             }
         }
     });
@@ -199,5 +181,6 @@ app.put('/loginUser/:userId', (req, res) => {
 //             console.log(query.sql, results);
 //         })
 //     })
+
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT)});
