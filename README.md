@@ -44,22 +44,22 @@ After account creation the traveler will have the ability to chat with the guide
   
 # to-do
 
-  * guide profile button click takes user to profile scroll
   * maps and markers for nearby guides
   * chat functionality 
   * validation for guides and users authentication for guide connection (tokens)
   * actual profile creation (guides, trvelers) through sign-up nav bar tab
+  * appending guide info to home carousel cards without overflowing 
   
   
 current work assignments:
 
-Badri: authentication for guides
+Badri: after guide authentication, guide re-direction.
 
-CLiff: MAPS, carousel, profile creation
+CLiff: MAPS cluster of guide markers collect lat and lng data for guide.
 
-Adam: CHAT, guide prof button
+Adam: CHAT(socket.io)
 
-Julianna: User Athentication
+Julianna: user accounts
 
 
 CSS: anyone who cares

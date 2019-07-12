@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
 </head>
+
 <body>
     <nav id="navbar-example2" class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Home</a>
@@ -26,10 +27,10 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">Log In</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item guide" href="#one">Guide</a>
+                    <a class="dropdown-item guide" href="/login">Guide</a>
                     <div role="separator" class="dropdown-divider"></div>
                     <a class="dropdown-item traveler" href="#two">Traveler</a>
-                   
+
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -81,7 +82,7 @@
 
 
     <!-- Javascript links -->
-    <script src="assets/javascript/map.js"></script>
+    {{!-- <script src="assets/javascript/map.js"></script> --}}
     <script src="assets/javascript/carousel.js"></script>
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -99,7 +100,7 @@
 
 
     <script>
-        $(document).ready(function () { 
+        $(document).ready(function () {
             $(".extendedInfo").on("click", function (e) {
                 e.preventDefault();
                 const id = $(this).attr("data-id")
@@ -127,6 +128,9 @@
                     $('#myModal2').modal('toggle');
                 });
             });
+
+            //badri's line's of code starts here//
+
 
         });
 
