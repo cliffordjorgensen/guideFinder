@@ -1,4 +1,4 @@
-    {{#each guideinfo}}
+
      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="fat">
             <div class="jumbotron">
@@ -13,6 +13,25 @@
                 <a class="btn btn-primary btn-lg extendedInfo active" type="button radio" data-id={{guideID}} href="#" role="button">See full profile</a>
             </div>
         </h4>
-        <p>...</p>
     </div>
-    {{/each}}
+
+    {{!-- <script>
+        $(document).ready(function () {
+            $(".extendedInfo").on("click", function (e) {
+                e.preventDefault();
+                const id = $(this).attr("data-id")
+                $.get("/profiles/" + id).then(function (data) {
+
+                    $("#exampleModalLongTitle").text(data.name);
+                    $("#match-img").attr("src", data.photolink);
+                    $("#age").text(data.age);
+                    $("#activity").text(data.activity);
+                    $("#city").text(data.city);
+                    $("#yearsofExperience").text(data.yearsofExperience);
+                    $("#descriptionActivity").text(data.descriptionActivity);
+
+                    window.location
+                });
+            });
+        });
+    </script> --}}

@@ -36,20 +36,22 @@
 <script>
 
     $(document).ready(function(){
-    $(".submitbtn").on("click", function (e) {
+    $(".form").on("submit", function (e) {
         console.log($('#password').val());
         e.preventDefault();
-        console.log("clickked")
+        console.log("submitted")
         $.ajax({
             method: 'POST',
-            url: '/login/',
+            url: '/login',
             data: {
                 username: $("#username").val().trim(),
                 password: $("#password").val().trim()
             }
         }).then(function (response) {
-           localStorage.setItem('id', response.guideID);
-           window.location.replace("/profiles")
+            console.log(response);
+           //localStorage.setItem('id', response.guideID);
+             window.location.href = '/guides/' + response.guideID;
+           
         });
 
      });

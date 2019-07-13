@@ -36,13 +36,38 @@ app.get("/profiles", (req, res) => {
         res.render('profiles', { guideinfo: data });
     })
 });
+
 app.get("/profiles/:id", (req, res) => {
     const id = req.params.id
     connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [id], (err, data) => {
         if (err) throw err
         res.send(data[0]);
+      
     })
 });
+
+app.get("/guides/:id", (req, res) => {
+    const id = req.params.id
+    connection.query('SELECT * FROM guideinfo WHERE guideID = ?;', [id], (err, data) => {
+        if (err) throw err
+        if(data.length <= 0) {
+            return res.json({error: "Not found"});
+        }
+        res.render('singleprofile', data[0]);
+    });
+});
+
+
+app.get("/login/:id", (req, res) => {
+    const id = req.params.id;
+    connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [guideID], (err, data) => {
+        if (err) throw err
+        res.send(data[0]);
+        console.log(data);
+        res.render('singleprofile')
+    })
+});
+
 app.get("/login", function(req, res) {
     res.render("login")
 });
@@ -53,15 +78,17 @@ app.get("/loginUser", function(req, res) {
 app.post('/login', (req, res) => {
     const username  = req.body.username;
     const password  = req.body.password;
-    const query     = "SELECT * FROM guideinfo WHERE username = ?";
-    connection.query(query, username, (err, users) => {
+    const query     = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
+    connection.query(query, [username, password], (err, users) => {
         if(err) throw err;
+        console.log('these are+',users)
         if(users.length <= 0) {
             res.json({ error: "No user with that email"});
         } else {
             const user = users[0];
             if(user.password === password) {
-                res.json(user);
+                // res.render('singleprofile')
+                res.json(user)            
             }
         }
     });
