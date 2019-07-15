@@ -1,12 +1,12 @@
 <style>
     body {
-       padding-bottom: 4.2rem;
+        padding-bottom: 4.2rem;
         background: #dadada;
     }
 
     a {
         text-decoration: none !important;
-    }   
+    }
 
     h1,
     h2,
@@ -144,7 +144,8 @@
                                 aria-describedby="emailHelp" placeholder="Enter Password">
                         </div>
                         <div class="col-md-12 text-center mb-3">
-                            <button type="submit" id="newUserBtn" class="btn btn-block mybtn tx-tfm navyBlue text-white">Get
+                            <button type="submit" id="newUserBtn"
+                                class="btn btn-block mybtn tx-tfm navyBlue text-white">Get
                                 Started For
                                 Free</button>
                         </div>
@@ -186,11 +187,11 @@
                             userName,
                             password,
                         }
-                    }).then(function () {  
+                    }).then(function () {
 
                     });
                     window.location.replace("/loginUser")
-                    
+
                 });
             });
         });
@@ -201,28 +202,30 @@
             });
         });
 
-     
-       $("#loginBtn").on("click", function (e) {
-        console.log($('#userLoginPassword').val());
-        e.preventDefault();
-        console.log("clickked")
-        $.ajax({
-            method: 'POST',
-            url: '/loginUser/',
-            data: {
-                username: $("#userLoginName").val().trim(),
-                password: $("#userLoginPassword").val().trim()
-            }
-        }).then(function (response) {
-           localStorage.setItem('userID', response.userID);
-            const contactId = localStorage.getItem("contactId")
-           window.location.href = '/singleProfileForUsers/' + contactId;
-           
+
+        $("#loginBtn").on("click", function (e) {
+            console.log($('#userLoginPassword').val());
+            e.preventDefault();
+            console.log("clickked")
+            $.ajax({
+                method: 'POST',
+                url: '/loginUser/',
+                data: {
+                    username: $("#userLoginName").val().trim(),
+                    password: $("#userLoginPassword").val().trim()
+                }
+            }).then(function (response) {
+                localStorage.setItem('userID', response.userID);
+                const contactId = localStorage.getItem("contactId")
+                window.location.href = '/singleProfileForUsers/' + contactId;
+
+            });
+
         });
 
-     });
 
-    });
+
+        });
 
 
 </script>
