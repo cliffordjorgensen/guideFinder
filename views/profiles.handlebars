@@ -1,9 +1,3 @@
-<style>
-
-
-
-</style>
-
 
     {{#each guideinfo}}
      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
@@ -17,8 +11,13 @@
                 <p><strong>Activities: </strong>{{activity}}</p>
                 <p><strong>City: </strong>{{city}}</p>
                 <p><strong>Description: </strong>{{descriptionActivity}}</p>
+
                 <a class="btn navyBlue text-white  btn-lg extendedInfo active" type="button radio" data-id={{guideID}} href="#" role="button">See full profile</a>
             </div>
+
+                <a class="btn btn-primary btn-lg extendedInfo active" type="button radio" data-id={{guideID}} href="#" role="button">See full profile</a>
+                <a class="btn btn-primary btn-lg chat-button active" type="button radio" href="./../public/assets/chat/public/index.html" role="button">Chat</a>
+
         </h4>
      
     </div>
