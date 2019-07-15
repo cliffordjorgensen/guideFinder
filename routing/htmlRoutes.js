@@ -50,8 +50,7 @@ module.exports = function(app) {
     });
     
     app.get("/singleProfileForUsers/:id", (req, res) => {
-        const id = localStorage.getItem('id')
-        console.log(id);
+        const id = req.params.id
         connection.query('SELECT * FROM guideinfo WHERE guideID = ?;', [id], (err, data) => {
             if (err) throw err
             if(data.length <= 0) {
@@ -132,12 +131,12 @@ module.exports = function(app) {
         });
     });
     
-    app.put('/loginUser/:userId', (req, res) => {
-        const id = req.params.guideId;
-        const query = "UPDATE userCredential SET name = ? WHERE id = ?;"
+    // app.put('/loginUser/:userId', (req, res) => {
+    //     const id = req.params.guideId;
+    //     const query = "UPDATE userCredential SET name = ? WHERE id = ?;"
     
-        connection.query('UPDATE guideinfo ')
-    });
+    //     connection.query('UPDATE guideinfo ')
+    // });
     
     
     app.post('/newUser', (req, res) =>{

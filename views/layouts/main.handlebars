@@ -186,6 +186,7 @@ a:hover {
             $(".extendedInfo").on("click", function (e) {
                 e.preventDefault();
                 const id = $(this).attr("data-id")
+                 localStorage.setItem('contactId', id)
                 $.get("/profiles/" + id).then(function (data) {
 
                     $("#exampleModalLongTitle").text(data.name);
@@ -207,8 +208,8 @@ a:hover {
             });
 
             $("#contactMe").on("click", function (e) {
-                console.log("isaac was here <--what's up, Isaac? -Adam")
                 e.preventDefault();
+               
                 window.location.replace("/loginUser")
             });
         });
