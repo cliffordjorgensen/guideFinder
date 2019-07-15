@@ -73,20 +73,43 @@ module.exports = function(app) {
     //-------------------------guideLogin -----------------------------------------
     
     app.post('/login', (req, res) => {
+        console.log("app.post/login", req.body);
         const username = req.body.username;
         const password = req.body.password;
-        const query = "SELECT * FROM guideinfo WHERE username = ?";
-        connection.query(query, username, (err, users) => {
+        const query = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
+        connection.query(query, [username, password], (err, users) => {
             if (err) throw err;
+            // console.log('these are+',users)
             if (users.length <= 0) {
                 res.json({ error: "No user with that email" });
             } else {
                 const user = users[0];
                 if (user.password === password) {
-                    res.json(user);
+                    res.json(user)
                 }
             }
         });
+    });
+    
+    app.put('/login', function (req, res) {
+        let query = 'INSERT INTO guideinfo SET ?';
+        //  'INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password ) VALUES (?)';
+        connection.query(query, { name: req.body.name, photolink: req.body.photolink, age: req.body.age, activity: null, city: req.body.city, yearsofExperience: null, descriptionActivity: null, username: req.body.username, password: req.body.password }, function (err, result) {
+            if (err) throw err;
+            else {
+                let query = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
+                connection.query(query, [req.body.username, req.body.password], (err, users) => {
+                    if (err) throw err;
+    
+                    if (users.length <= 0) {
+                        res.json({ error: "No user with that email" });
+                    } else {
+                        const user = users[0];
+                        res.json(user)
+                    }
+                });
+            }
+        })
     });
     
     
@@ -126,6 +149,20 @@ module.exports = function(app) {
     
         });
     
+    });
+
+        //-------map----------------------------------///
+
+    app.get("/home", (req, res) => {
+        connection.query('SELECT * FROM guideinfo;', (err, data) => {
+            console.log(data[0].latitude);
+            console.log(data[0].longitude);
+            // Do not delete!
+            const active = data[0]
+            const restOfGuides = data.slice(1)
+            res.render('home', { guideinfo: restOfGuides, active: active });
+            // Do not delete!
+        })
     });
     
 };
