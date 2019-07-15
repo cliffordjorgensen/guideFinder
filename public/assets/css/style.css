@@ -31,16 +31,6 @@ body {
     background-color:#dadada;
 }   
 
-nav.navbar {
-    background-color:  #204969;
-    color: #fff7f7;
-}
-
-nav.navbar ul.nav li {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
 @media (min-width: 768px) {
     /* show 3 items */
     .carousel-inner .active,
@@ -125,26 +115,7 @@ body {
     margin-top: -85px;
 }
 
-.naturalWHite {
-color: #fff7f7
-
-}
-
-.navyBlue {
-    background-color: #204969;
-}
-
-.navyBlueLight {
-    background-color: #08ffc8;
-}
-a:hover {
-    background-color: #08ffc8;
-  }
-
-.HighlightGreen{
-    color: #08ffc8;
-    
-}
+/* Style for my modal pictures (main.handlebars) */
 
 .texto-modal{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
