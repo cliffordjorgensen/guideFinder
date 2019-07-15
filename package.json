@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Travel experiences application allows travelers to connect with local guides.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +16,14 @@
     "express-handlebars": "^3.1.0",
     "mysql": "^2.17.1",
     "pexels-api-wrapper": "^1.1.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cliffordjorgensen/guideFinder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cliffordjorgensen/guideFinder/issues"
+  },
+  "homepage": "https://github.com/cliffordjorgensen/guideFinder#readme"
 }
