@@ -11,10 +11,8 @@ activity VARCHAR(500) NULL,
 city VARCHAR(255) NULL,
 yearsofExperience INT NULL,
 descriptionActivity VARCHAR(9001) NULL,
+username VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL,
-latitude DECIMAL(9,6),
-longitude DECIMAL(9,6)
 PRIMARY KEY (guideID)); 
 
 SELECT * from guideinfo;

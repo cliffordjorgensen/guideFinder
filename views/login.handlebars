@@ -48,8 +48,7 @@
 
 
 
-
-{{!-- <script>
+<script>
 
     $(document).ready(function(){
     $(".submitbtn").on("click", function (e) {
@@ -65,6 +64,7 @@
             }
         }).then(function (response) {
            localStorage.setItem('id', response.guideID);
+           window.location.replace("/profiles")
         });
 
      });
@@ -74,29 +74,4 @@
 
 
 
-</script> --}}
-
-<script>
-    /*
-    $('#login-form').on('submit', function (event) {
-        event.preventDefault()
-        console.log('i am submitted')
-        console.log($(this).serialize())
-
-        $.ajax({
-            url: '/login',
-            method: 'post',
-            data: $(this).serialize()
-            
-            //data: {
-            //    email: $('#email').val().trim(),
-            //    password: $('#password').val().trim()
-            //}
-            
-        }).then(function (res) {
-            console.log("this is the response from main ", res);
-        })
-    });
-    */
 </script>
-

@@ -79,6 +79,36 @@
             </div>
         </div>
     </div>
+    {{!-- Chat HTML --}}
+        <div class="modal fade bd-example-modal-lg" id="chatModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Chat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                 {{!-- Chat modal content --}}
+                <div class="modal-body">
+                    <div id='guide-chat'>
+                        <div id="chat-window">
+                            <div id="output"></div>
+                            <div id="feedback"></div>
+                        </div>
+                        <!-- TODO: Implement current logged in guide/tourist name instead of manual entry -->
+                        <input id="username" type="text" placeholder="Username" />
+                        <input id="message" type="text" placeholder="Message" />
+                        <button id="send-button">Send</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="close-button" class="btn btn-primary active" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         $(document).ready(function () {
             $(".extendedInfo").on("click", function (e) {
@@ -99,15 +129,24 @@
             });
 
             $("#contactMe").on("click", function (e) {
-                console.log("isaac was here")
+                console.log("isaac was here <--what's up, Isaac? -Adam")
                 e.preventDefault();
                 window.location.replace("/loginUser")
             });
         });
+        // jQuery to open and close chat modal
+            $(".chat-button").on("click", function (e) {
+                e.preventDefault();
+                const id = $(this).attr("data-id")
+                    $('#chatModal').modal('toggle');
+            });
     </script>
 
     <!-- Javascript links -->
-    <script src="assets/javascript/map.js"></script>    
+
+    <script src="./../../public/assets/chat/index.js"></script>
+    <script src="./../../public/assets/chat/public/chat.js"></script>
+    <script src="assets/javascript/map.js"></script> 
     <script src="assets/javascript/carousel.js"></script>
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
