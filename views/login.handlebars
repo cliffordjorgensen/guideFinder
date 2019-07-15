@@ -110,7 +110,7 @@
                             </div> -->
                             <div class="col-md-12 text-center ">
                                 <button id="loginBtn" type="submit"
-                                    class=" btn btn-block mybtn btn-primary tx-tfm ">Login</button>
+                                    class=" btn btn-block btn-primary tx-tfm ">Login</button>
                             </div>
                             <div class="col-md-12 ">
                                 <div class="login-or">
@@ -151,6 +151,11 @@
                                     aria-describedby="emailHelp" placeholder="Provide a link to your Picture">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail1">City</label>
+                                <input type="city" name="city" class="form-control" id="newCity"
+                                    aria-describedby="emailHelp" placeholder="Enter City">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Age</label>
                                 <input type="age" name="age" class="form-control" id="newAge"
                                     aria-describedby="emailHelp" placeholder="Enter Age">
@@ -167,7 +172,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> Password</label>
-                                <input type="password" name="password" id="NewPassword" class="form-control"
+                                <input type="password" name="password" id="newPassword" class="form-control"
                                     aria-describedby="emailHelp" placeholder="Create your Password">
                             </div>
                             <div class="form-group">
@@ -190,26 +195,6 @@
     </div>
     <script>
 
-        $(document).ready(function () {
-            $("#loginBtn").on("click", function (e) {
-                console.log($('#password').val());
-                e.preventDefault();
-                $.ajax({
-                    method: 'POST',
-                    url: '/login',
-                    data: {
-                        username: $("#userLoginName").val().trim(),
-                        password: $("#userLoginPassword").val().trim()
-                    }
-                }).then(function (response) {
-                    console.log(response);
-                    //localStorage.setItem('id', response.guideID);
-                    window.location.href = '/guides/' + response.guideID;
-
-                });
-            });
-        });
-
         $("#signup").click(function () {
             $("#first").fadeOut("fast", function () {
                 $("#second").fadeIn("fast");
@@ -223,7 +208,47 @@
         });
 
 
+        $(document).ready(function () {
+            $("#loginBtn").on("click", function (e) {
+                console.log('hello from login button!')
+                console.log($('#password').val());
+                e.preventDefault();
+                $.ajax({
+                    method: 'POST',
+                    url: '/login',
+                    data: {
+                        username: $("#userLoginName").val().trim(),
+                        password: $("#userLoginPassword").val().trim()
+                    }
+                }).then(function (response) {
+                    console.log(response);
+                    localStorage.setItem('id', response.guideID);
+                    window.location.href = '/guides/' + response.guideID;
 
+                });
+            });
+        });
 
+        $('.mybtn').on('click', function (event) {
+            (event).preventDefault();
+            console.log('sign up button clickeddddddd');
+            $.ajax({
+                url: '/login',
+                method: 'PUT',
+                data: {
+                    name: $('#fullname').val().trim(),
+                    photolink: $('#newPhotoLink').val().trim(),
+                    age: $('#newAge').val().trim(),
+                    city: $('#newCity').val().trim(),
+                    username: $('#newUserName').val().trim(),
+                    password: $('#newPassword').val().trim()
+                }
+            }).then(function (response) {
+                console.log('response is rendered until here')
+                console.log(response);
+                localStorage.setItem('id', response.guideID);
+                window.location.href = '/guides/' + response.guideID;
+            });
+        });
     </script>
 </body>

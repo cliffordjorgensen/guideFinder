@@ -18,7 +18,7 @@ const connection = mysql.createConnection({
     password: "@Apartment7",
     database: "guidefinder_db"
 });
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) {
         console.error("error connecting: " + err.stack);
         return;
@@ -32,7 +32,7 @@ app.get("/home", (req, res) => {
 });
 app.get("/profiles", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
-        
+
         res.render('profiles', { guideinfo: data });
     })
 });
@@ -42,7 +42,7 @@ app.get("/profiles/:id", (req, res) => {
     connection.query('SELECT * FROM guideinfo WHERE guideID=?;', [id], (err, data) => {
         if (err) throw err
         res.send(data[0]);
-      
+
     })
 });
 
@@ -50,8 +50,8 @@ app.get("/guides/:id", (req, res) => {
     const id = req.params.id
     connection.query('SELECT * FROM guideinfo WHERE guideID = ?;', [id], (err, data) => {
         if (err) throw err
-        if(data.length <= 0) {
-            return res.json({error: "Not found"});
+        if (data.length <= 0) {
+            return res.json({ error: "Not found" });
         }
         res.render('singleprofile', data[0]);
     });
@@ -68,49 +68,71 @@ app.get("/login/:id", (req, res) => {
     })
 });
 
-app.get("/login", function(req, res) {
+app.get("/login", function (req, res) {
     res.render("login")
 });
-app.get("/loginUser", function(req, res) {
+app.get("/loginUser", function (req, res) {
     res.render("loginUser")
 })
 //-------------------------guideLogin -----------------------------------------
 app.post('/login', (req, res) => {
-    const username  = req.body.username;
-    const password  = req.body.password;
-    const query     = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
+    console.log("app.post/login", req.body);
+    const username = req.body.username;
+    const password = req.body.password;
+    const query = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
     connection.query(query, [username, password], (err, users) => {
-        if(err) throw err;
-        console.log('these are+',users)
-        if(users.length <= 0) {
-            res.json({ error: "No user with that email"});
+        if (err) throw err;
+        // console.log('these are+',users)
+        if (users.length <= 0) {
+            res.json({ error: "No user with that email" });
         } else {
             const user = users[0];
-            if(user.password === password) {
-                // res.render('singleprofile')
-                res.json(user)            
+            if (user.password === password) {
+                res.json(user)
             }
         }
     });
 });
-app.put('/login/:guideId', (req, res) => {
-    const id = req.params.guideId;
-    const query = "UPDATE guideInfo SET name = ? WHERE id = ?;"
-    connection.query('UPDATE guideinfo ')
-});
+
+app.put('/login', function (req, res) {
+    console.dir(req.body)
+    let query = 'INSERT INTO guideinfo SET ?';
+    //  'INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password ) VALUES (?)';
+    connection.query(query, { name: req.body.name, photolink: req.body.photolink, age: req.body.age, activity: null, city: req.body.city, yearsofExperience: null, descriptionActivity: null, username: req.body.username, password: req.body.password }, function (err, result) {
+        if (err) throw err;
+        else {
+            let query = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
+            connection.query(query, [req.body.username, req.body.password], (err, users) => {
+                if (err) throw err;
+
+                if (users.length <= 0) {
+                    res.json({ error: "No user with that email" });
+                } else {
+                    const user = users[0];
+                    res.json(user)
+                }
+            });
+        }
+    })
+})
+// app.put('/login/:guideId', (req, res) => {
+//     const id = req.params.guideId;
+//     const query = "UPDATE guideInfo SET name = ? WHERE id = ?;"
+//     connection.query('UPDATE guideinfo ')
+// });
 //----------------------------------------------------------------------------------//
 //-------------------------userLogin -----------------------------------------
 app.post('/loginUser', (req, res) => {
-    const username  = req.body.username;
-    const password  = req.body.password;
-    const query     = "SELECT * FROM userCredential WHERE accountname = ?";
+    const username = req.body.username;
+    const password = req.body.password;
+    const query = "SELECT * FROM userCredential WHERE accountname = ?";
     connection.query(query, username, (err, users) => {
-         if(err) throw err;
-        if(users.length <= 0) {
-            res.json({ error: "No user with that email"});
+        if (err) throw err;
+        if (users.length <= 0) {
+            res.json({ error: "No user with that email" });
         } else {
             const user = users[0];
-            if(user.userpassword === password) {
+            if (user.userpassword === password) {
                 res.json(user);
             }
         }
@@ -123,14 +145,14 @@ app.put('/loginUser/:userId', (req, res) => {
 });
 //----------------------------------------------------------------------------------//
 // connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
-    
+
 //     const response =[]
 //     const tempPics = ""
 //     data.forEach(function (e){
 //         const temp = e.city + " " + e.activity
 //         response.push(temp)
 //     })
-    
+
 //     response.forEach(function(elem){
 //         pexelsClient.search(elem, 10, 1)
 //     .then(function (result) {
@@ -140,9 +162,9 @@ app.put('/loginUser/:userId', (req, res) => {
 //             tempPics += temp + ","
 //             if( i % 5 === 0){
 //                 tempPics += "/n"
-                
+
 //             }
-         
+
 //         } 
 //         console.log(tempPics);
 //     }).
@@ -157,5 +179,6 @@ app.put('/loginUser/:userId', (req, res) => {
 //         console.log("pics updated successfull");
 //     });
 // }); 
-app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT)});
+app.listen(PORT, function () {
+    console.log("App now listening at localhost:" + PORT)
+});
