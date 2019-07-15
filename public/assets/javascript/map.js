@@ -1,3 +1,5 @@
+const mysql = require("mysql");
+
 var map, infoWindow;
 
 function initMap() {

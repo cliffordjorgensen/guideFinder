@@ -1,4 +1,4 @@
-INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password) 
+INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password, latitude, longitude) 
 VALUES ("Lucas Brennan", 
 "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", 
 27, 
@@ -11,7 +11,9 @@ we will venture down streets other bigger bus tours can’t go, and get in the l
 
 the Bay is well known for as you spot famous musicians’ homes while listening to classic songs.",
 "lucasabc",
-"abc" ),
+"abc" ,
+ 37.7749,
+-122.4194),
 
 ("Logan Smith", 
 "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
@@ -23,7 +25,9 @@ the Bay is well known for as you spot famous musicians’ homes while listening 
 venture behind the scenes of the North Shattuck district. Food tastings include gourmet cheeses, chocolates, gelato, pizza,
 sandwiches, and wine at notable venues committed to sustainable and organic cuisine of this San Francisco Bay Area enclave.",
 "loganabc",
-"def" ),
+"def" ,
+ 37.2749,
+-122.5194),
 ("Olivia Johnson", 
 
 "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
@@ -35,7 +39,9 @@ sandwiches, and wine at notable venues committed to sustainable and organic cuis
 (Ram's Gate, Winery Sixteen 600 and Larson Family Vineyards. We'll enjoy and epic catered lunch at our second stop. 
 Payment for wine tasting at each location, anticipate between $25-40 in tastings per person per winery",
 "oliviaabc",
-"abc" ),
+"abc" ,
+ 37.9749,
+-122.1194),
 ("Tiffany Allen", 
 "https://images.pexels.com/photos/975680/pexels-photo-975680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 30, 
@@ -45,7 +51,9 @@ Payment for wine tasting at each location, anticipate between $25-40 in tastings
 "Crafting with Leather: Make your own personalized leather valettray that you can use in the home, officer or abroad. 
 Learn leather craft basics and how to consttruct a dimensional and functional piece, using just your hands and manual tools.",
 "tiffanyabc",
-"def"),
+"def",
+ 37.3749,
+-122.4194),
 ("Michael Dunder",
 "https://nquerysolutions.com/wp-content/uploads/2017/10/pexels-photo-551653-1.jpeg",
 39,
@@ -57,7 +65,9 @@ I pride myself in developing a unique itinerary to meet your interests, and welc
 You’ll tour the Oakland in a new Lexus sedan which seats up to 4 passengers very comfortably with fantastic legroom. 
 The sedan allows us access to neighborhoods and viewpoints that are off limits to larger van and bus tours.",
 "michaelabc",
-"abc"),
+"abc",
+ 37.1749,
+-122.1194),
 ("Norman Malone",
 "https://images.pexels.com/photos/346824/pexels-photo-346824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
 27,
@@ -67,7 +77,9 @@ The sedan allows us access to neighborhoods and viewpoints that are off limits t
 "I offer private tours of San Francisco, Napa Wine country, Pacific Coastline and National Parks, 
 Silicon Valley, and Monterey and Santa Cruz. I also offer completely customizable private tours suitable to your needs and wishes.",
 "normanabc",
-"def");
+"def",
+ 37.7790,
+-122.4101);
 
 
 
@@ -89,10 +101,10 @@ INSERT INTO login(email, password) VALUES ('michael.dunder@gmail.com', 'hello');
 INSERT INTO login(email, password) VALUES ('norman.malone@hotmail.com', 'hello');
 
 ----------userLogin--------------
-INSERT INTO userCredential (accountname, userpassword)
-VALUES ("hellorn", "123"),
-       ("lindzy26", "456"),
-       ("juanperez", "789"),
-       ("michelw", "956"),
-       ("cvelez", "712");
+INSERT INTO userCredential (accountname, userpassword, searchTerm, latitude, longitude)
+VALUES ("hellorn", "123", 37.7749, -122.4194),
+       ("lindzy26", "456", 37.7749, -122.4194),
+       ("juanperez", "789", 37.7749, -122.4194),
+       ("michelw", "956", 37.7749, -122.4194),
+       ("cvelez", "712", 37.7749, -122.4194),
 

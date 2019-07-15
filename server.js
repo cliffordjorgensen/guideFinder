@@ -35,6 +35,8 @@ connection.connect(function(err) {
 
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
+        console.log(data[0].latitude);
+        console.log(data[0].longitude);
         // Do not delete!
         const active = data[0]
         const restOfGuides = data.slice(1)
@@ -44,7 +46,7 @@ app.get("/home", (req, res) => {
 });
 app.get("/profiles", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
-        console.log(data);
+
         res.render('profiles', { guideinfo: data });
     })
 });
@@ -92,8 +94,6 @@ app.put('/login/:guideId', (req, res) => {
 });
 
 
-//----------------------------------------------------------------------------------//
-
 //-------------------------userLogin -----------------------------------------
 
 app.post('/loginUser', (req, res) => {
@@ -121,67 +121,9 @@ app.put('/loginUser/:userId', (req, res) => {
 });
 
 
-//----------------------------------------------------------------------------------//
-
-
-// connection.query('SELECT activity, city FROM guideinfo;', (err, data) =>{
-
-//     const response =[]
-//     const tempPics = ""
-//     data.forEach(function (e){
-//         const temp = e.city + " " + e.activity
-//         response.push(temp)
-//     })
-
-//     response.forEach(function(elem){
-//         pexelsClient.search(elem, 10, 1)
-//     .then(function (result) {
-//         for (let i = 0; i < result.photos.length; i++) {
-//             const temp = result.photos[i].url
-//             // console.log(temp);
-//             tempPics += temp + ","
-//             if( i % 5 === 0){
-//                 tempPics += "/n"
-
-//             }
-
-//         } 
-//         console.log(tempPics);
-
-//     }).
-//     catch(function (e) {
-//         // console.err(e);
-
-//     });
-//     })
-
-//     fs.appendFile("sfpics.csv", JSON.stringify(tempPics), function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-//         console.log("pics updated successfull");
-
-//     });
-// }); 
-
-//     app.post('/login', function(req, res){
-//         // console.log(req.body)
-//         const email = req.body.email;
-//         const password = req.body.password;
-//         const query = connection.query('SELECT * FROM login WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(err, results){
-//             if (err) throw err;
-//             if (results.length === 0) {
-//                 res.status(401).send("invalid")
-//                 // res.render()
-//             } else {
-//                 // res.send("valid")
-//                 // console.log(results);
-//                 res.render("guideProfile")
-//             }
-//             console.log(query.sql, results);
-//         })
-//     })
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT)
 });
+
+//-------------------------userLogin -----------------------------------------
