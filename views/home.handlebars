@@ -1,38 +1,41 @@
 <!-- google map -->
 <div id="map"></div>
+
 <!-- keyword input bar -->
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search term" aria-label="traveler search term"
-                aria-describedby="button-addon4">
-            <div class="input-group-append" id="button-addon4">
-                <button class="btn btn-outline-secondary" type="button">Filters</button>
-                <button class="btn btn-outline-secondary" type="button">Submit</button>
-            </div>
+<div class="jumbotron jumbotron-fluid intro-jumbotron clearfix">
+    <div class="input-group">
+        <input type="text" class="form-control" id="search-term" placeholder="Search term" aria-label="traveler search term"
+            aria-describedby="button-addon4">
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-outline-secondary" type="button">Filters</button>
+            <button class="btn btn-outline-secondary" type="button">Submit</button>
         </div>
     </div>
 </div>
+
+<div class="profiles-button navyBlue">
+        <a href="/profiles" style="text-decoration:none">
+        <button type="button" class="btn navyBlue text-white border-0 btn-lg btn-block mb-3">Guide Profiles</button>
+        </a>
+</div>
 <!-- profile carousel -->
 <div class="container-fluid">
-    <button type="button" class="btn btn-secondary btn-lg btn-block" class="extendedInfo">
-        <h2 class="text-center mb-3">Guide Profiles</h2></button>
     
     <div id="myCarousel" class="carousel slide" data-ride="carousel">    
         <div class="carousel-inner row w-100 mx-auto">
             <div class="carousel-item col-md-4 active">
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-5 pl-3 pr-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src={{photolink}} class="float-left col-md-8">
+                            <img src={{active.photolink}} class="card-img mt-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{name}}</h5>
-                                <p class="card-text">{{age}}</p>
-                                <p class="card-text">{{activity}}</p>
-                                <p class="card-text">{{city}}</p>
-                                <p class="card-text">{{yearsOfExperience}}</p>
+                                <h5 class="card-title">{{active.name}}</h5>
+                                <p class="card-text">Age: {{active.age}}</p>
+                                <p class="card-text">Activity: {{active.activity}}</p>
+                                <p class="card-text">City: {{active.city}}</p>
+                                <p class="card-text">{{active.yearsOfExperience}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -40,18 +43,18 @@
                 </div>
             </div>
             {{#each guideinfo}}
-            <div class="carousel-item col-md-4 ">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="carousel-item col-md-4">
+                <div class="card mb-5 pl-3 pr-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src={{photolink}} class="card-img" alt="...">
+                            <img src={{photolink}} class="card-img mt-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{name}}</h5>
-                                <p class="card-text">{{age}}</p>
-                                <p class="card-text">{{activity}}</p>
-                                <p class="card-text">{{city}}</p>
+                                <h5 class="card-title"> {{name}}</h5>
+                                <p class="card-text">Age: {{age}}</p>
+                                <p class="card-text">Activity: {{activity}}</p>
+                                <p class="card-text">City: {{city}}</p>
                                 <p class="card-text">{{yearsOfExperience}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
@@ -59,8 +62,7 @@
                     </div>
                 </div>
             </div>
-            {{/each}}
-        </div>
+            {{/each}} 
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -70,6 +72,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    
-    
-</div>
+ </div>
