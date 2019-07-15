@@ -13,10 +13,9 @@
     </div>
 </div>
 
-<div class="profiles-button">
+<div class="profiles-button navyBlue">
         <a href="/profiles" style="text-decoration:none">
-        <button type="button" class="btn btn-secondary btn-sm btn-block" class="extendedInfo" id="profilesBtn">
-            <h2 class="text-center mb-3">Guide Profiles</h2></button>
+        <button type="button" class="btn navyBlue text-white border-0 btn-lg btn-block mb-3">Guide Profiles</button>
         </a>
 </div>
 <!-- profile carousel -->
@@ -25,17 +24,17 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">    
         <div class="carousel-inner row w-100 mx-auto">
             <div class="carousel-item col-md-4 active">
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-5 pl-3 pr-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src={{active.photolink}} class="float-left col-md-8">
+                            <img src={{active.photolink}} class="card-img mt-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{active.name}}</h5>
-                                <p class="card-text">{{active.age}}</p>
-                                <p class="card-text">{{active.activity}}</p>
-                                <p class="card-text">{{active.city}}</p>
+                                <p class="card-text">Age: {{active.age}}</p>
+                                <p class="card-text">Activity: {{active.activity}}</p>
+                                <p class="card-text">City: {{active.city}}</p>
                                 <p class="card-text">{{active.yearsOfExperience}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
@@ -44,18 +43,18 @@
                 </div>
             </div>
             {{#each guideinfo}}
-            <div class="carousel-item col-md-4 ">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="carousel-item col-md-4">
+                <div class="card mb-5 pl-3 pr-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src={{photolink}} class="card-img" alt="...">
+                            <img src={{photolink}} class="card-img mt-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{name}}</h5>
-                                <p class="card-text">{{age}}</p>
-                                <p class="card-text">{{activity}}</p>
-                                <p class="card-text">{{city}}</p>
+                                <h5 class="card-title"> {{name}}</h5>
+                                <p class="card-text">Age: {{age}}</p>
+                                <p class="card-text">Activity: {{activity}}</p>
+                                <p class="card-text">City: {{city}}</p>
                                 <p class="card-text">{{yearsOfExperience}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>

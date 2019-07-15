@@ -3,11 +3,6 @@ const exphbs = require("express-handlebars");
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-const PexelsAPI = require('pexels-api-wrapper');
-const pexelsClient = new PexelsAPI("563492ad6f91700001000001e4518284000e41a3beb1ab31ef33e0a9");
-const fs = require("fs");
-const mysql = require("mysql");
-
 app.use(express.static("public"));
 
 
@@ -15,6 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+require("./routing/htmlRoutes")(app);
 
 
 const connection = mysql.createConnection({
@@ -119,8 +116,6 @@ app.put('/loginUser/:userId', (req, res) => {
 
     connection.query('UPDATE guideinfo ')
 });
-
-
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT)

@@ -19,19 +19,18 @@ PRIMARY KEY (guideID));
 
 SELECT * from guideinfo;
 
-USE guidefinder_db;
+USE  guidefinder_db;
 CREATE TABLE pictures(
-pictureID INT AUTO_INCREMENT,
+picId INT AUTO_INCREMENT,
 pic1 VARCHAR(255) NULL,
 pic2 VARCHAR(255) NULL,
 pic3 VARCHAR(255) NULL,
 pic4 VARCHAR(255) NULL,
 pic5 VARCHAR(255) NULL,
-guideID INT NOT NULL,
-PRIMARY KEY (pictureID)); 
-FOREIGN KEY (guideID) REFERENCES guideinfo(guideID)
+pic6 VARCHAR(255) NULL,
+PRIMARY KEY (picId)); 
 
-SELECT * from pictures;
+SELECT * from guideinfo INNER JOIN pictures ON guideinfo.guideID = pictures.picId;
 
 
 USE guidefinder_db;
@@ -42,11 +41,13 @@ email VARCHAR (255) NOT NULL,
 password VARCHAR (55) NOT NULL,
 PRIMARY KEY (userId));
 
-
 USE guidefinder_db;
 CREATE TABLE userCredential(
 userID INT AUTO_INCREMENT,
+firstName VARCHAR(255) NULL,
+lastName VARCHAR(255) NULL,
 accountname VARCHAR (255) NULL,
+
 userpassword VARCHAR(255) NOT NULL, 
 latitude DECIMAL(9,6),
 longitude DECIMAL(9,6)
@@ -54,5 +55,7 @@ PRIMARY KEY (userID));
 
 SELECT * from userCredential;
 
+
+SELECT * FROM userCredential;
 
 
