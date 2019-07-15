@@ -1,6 +1,6 @@
 INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password) 
 VALUES ("Lucas Brennan", 
-"https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", 
+"https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", 
 27, 
 "Tour in bus", 
 "San Francisco", 
@@ -73,15 +73,46 @@ Silicon Valley, and Monterey and Santa Cruz. I also offer completely customizabl
 
 -- pictures database--------------
 
-INSERT INTO pictures (pic1, pic2, pic3, pic4, pic5)
+INSERT INTO pictures (pic1, pic2, pic3, pic4, pic5, pic6)
 VALUES("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/06/6f/7b/83.jpg",
 "https://images.pexels.com/photos/258447/pexels-photo-258447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 "https://images.pexels.com/photos/672916/pexels-photo-672916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 "https://images.pexels.com/photos/1119075/pexels-photo-1119075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
-"https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+"https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
+"https://images.pexels.com/photos/1119139/pexels-photo-1119139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"),
+("https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2616716/pexels-photo-2616716.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/1268558/pexels-photo-1268558.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2612338/pexels-photo-2612338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2585614/pexels-photo-2585614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"),
+("https://images.pexels.com/photos/290316/pexels-photo-290316.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/1097425/pexels-photo-1097425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/39511/purple-grapes-vineyard-napa-valley-napa-vineyard-39511.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2581022/pexels-photo-2581022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2566029/pexels-photo-2566029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/1498923/pexels-photo-1498923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"),
+("https://images.pexels.com/photos/982657/pexels-photo-982657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/982660/pexels-photo-982660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/951236/pexels-photo-951236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/1646953/pexels-photo-1646953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/1559046/pexels-photo-1559046.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/1573829/pexels-photo-1573829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"),
+("https://images.pexels.com/photos/2575467/pexels-photo-2575467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/415976/pexels-photo-415976.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/542704/pexels-photo-542704.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/640907/pexels-photo-640907.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/2387866/pexels-photo-2387866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2452241/pexels-photo-2452241.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+("https://images.pexels.com/photos/2622767/pexels-photo-2622767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2331572/pexels-photo-2331572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2331580/pexels-photo-2331580.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2575757/pexels-photo-2575757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://images.pexels.com/photos/2440009/pexels-photo-2440009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 
 
-INSERT INTO login(email, password) VALUES ('lucas.brennan@gmail.com', 'hello');
+INSERT INTO login(email, password) VALUES ('lucas.brennan', 'hello');
 INSERT INTO login(email, password) VALUES ('logan.smith@yahoo.com', 'hello');
 INSERT INTO login(email, password) VALUES ('olivia.johnson@gmail.com', 'hello');
 INSERT INTO login(email, password) VALUES ('tiffany.allen@gmail.com', 'hello');
@@ -89,10 +120,10 @@ INSERT INTO login(email, password) VALUES ('michael.dunder@gmail.com', 'hello');
 INSERT INTO login(email, password) VALUES ('norman.malone@hotmail.com', 'hello');
 
 ----------userLogin--------------
-INSERT INTO userCredential (accountname, userpassword)
-VALUES ("hellorn", "123"),
-       ("lindzy26", "456"),
-       ("juanperez", "789"),
-       ("michelw", "956"),
-       ("cvelez", "712");
+INSERT INTO userCredential (firstName, lastName, accountname, userpassword)
+VALUES ("Lauren","Hiller","hellorn", "123"),
+       ("Lindzy", "Lawson","lindzy26", "456"),
+       ("Juan","Perez","juanperez", "789"),
+       ("Michel","Jean","michelw", "956"),
+       ("Cesar", "Velez","cvelez", "712");
 

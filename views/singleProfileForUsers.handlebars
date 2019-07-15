@@ -1,9 +1,8 @@
 
-    {{#each guideinfo}}
      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="fat">
-            <div class="jumbotron mt-3 bg-white pl-3 ml-3 mr-3 pt-3 pb-3 mb-5">
-                <img src={{photolink}} class="rounded float-right col-md-4 border-secondary">
+            <div class="jumbotron">
+                <img src={{photolink}} class="rounded float-right col-md-4">
                 <h1><strong>{{name}}</strong></h1>
                 <br>
                 <p><strong>Age: </strong>{{age}}</p>
@@ -11,11 +10,9 @@
                 <p><strong>Activities: </strong>{{activity}}</p>
                 <p><strong>City: </strong>{{city}}</p>
                 <p><strong>Description: </strong>{{descriptionActivity}}</p>
-                <a class="btn navyBlue text-white  btn-lg extendedInfo active" type="button radio" data-id={{guideID}} href="#" role="button">See full profile</a>
+                <a class="btn btn-primary btn-lg active" type="button radio" href="#" role="button">Chat With Me</a>
+                <a class="btn btn-primary btn-lg active" type="button radio" href="#" role="button">Make your payment</a>
             </div>
         </h4>
-     
+        <p>...</p>
     </div>
-    {{/each}}
-
-    

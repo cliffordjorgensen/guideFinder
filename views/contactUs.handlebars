@@ -1,0 +1,103 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #dadada;
+    }
+
+    .container {
+        width: 900px;
+        margin: 250px auto 0;
+        display: flex;
+    }
+
+    .container .box {
+        position: relative;
+        width: 300px;
+        height: 100px;
+        box-sizing: border-box;
+        text-align: center;
+        margin: 0 10px;
+        background: #204969;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 0 0 2px rgba(0, 7, 10, 1);
+    }
+
+    .container .box .icon {
+        width: 100%;
+        height: 100%;
+        background: #204969;
+        transition: 0.5s;
+    }
+
+    .container .box .icon .fa {
+        font-size: 4em;
+        line-height: 100px;
+        color: #08ffc8;
+    }
+
+    .container .box:hover .icon {
+        transform: scale(0);
+    }
+
+    .container .box .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #08ffc8;
+        color:#204969;
+        transition: 0.5s;
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    .container .box:hover .details {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .container .box .details h3 {
+        margin: 0;
+        padding: 0;
+        line-height: 100px;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    .container .box .details:nth-child(2) .details {
+        background: #e91e63;
+    }
+
+    .container .box .details:nth-child(2) .details {
+        background: #607d8b;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="box border-0">
+        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+        <div class='details'>
+            <h3>USA - Berkeley, CA</h3>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+        <div class='details'>
+            <h3>+1 901 2345 678</h3>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+        <div class='details'>
+            <h3>info@gmail.com</h3>
+        </div>
+    </div>
+</div>

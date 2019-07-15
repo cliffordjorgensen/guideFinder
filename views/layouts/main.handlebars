@@ -10,41 +10,43 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 
 <body>
-    <nav id="navbar-example2" class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Home</a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#fat">Profiles</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#mdo">Contact us</a>
-            </li>
-            <!--sign in options -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Log In</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item guide" href="/login">Guide</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item traveler" href="#two">Traveler</a>
+    <nav id="navbar-example2" class="navbar navbar navbar-expand-lg shadow-sm">
+        <a class="navbar-brand naturalWHite rounded p-2 " href="/home"> <i class="fa fa-home"></i> Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars HighlightGreen"></i></span>
+        </button>
+        <div class="collapse navbar-collapse float-right" id="navbarText">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link float-right naturalWHite" href="/profiles"> <i class="fa fa-users"></i>
+                        Profiles</a>
+                </li>
+                <!--sign in options -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle naturalWHite " data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"> <i class="fa fa-sign-in"></i> Log In</a>
+                    <div class="dropdown-menu HighlightGreen">
+                        <a class="dropdown-item guide" href="/login">Guide</a>
+                        <div role="separator" class="dropdown-divider"></div>
+                        <a class="dropdown-item traveler" href="/loginUser">Traveler</a>
 
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Menu</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#one">one</a>
-                    <a class="dropdown-item" href="#two">two</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#three">three</a>
-                </div>
-            </li>
-        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link naturalWHite" href="/contactUs"> <i class="fa fa-id-badge"></i> Contact us</a>
+                </li>
+
+            </ul>
+        </div>
     </nav>
+
     {{{body}}}
 
 
@@ -63,22 +65,55 @@
                 <div class="modal-body">
                     <img id="match-img"
                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""
-                        class="img-thumbnail col-md-6">
-                    <p id="age"></p>
-                    <p id="activity"></p>
-                    <p id="city"></p>
-                    <p id="yearsofExperience"></p>
-                    <p id="descriptionActivity"></p>
+                        class="img-thumbnail col-md-6 mb-3">
+                    <p class="texto-modal" id="age"></p>
+                    <p class="texto-modal" id="activity"></p>
+                    <p class="texto-modal" id="city"></p>
+                    <p class="texto-modal" id="yearsofExperience"></p>
+                    <p class="texto-modal" id="descriptionActivity"></p>
+                    <figure>
+                        <img id="imgs1"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                    </figure>
+                    <figure>
+                        <img id="imgs2" class="two columns"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                    </figure>
+                    <figure>
+                        <img id="imgs3" class="two columns"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                    </figure>
+                    <figure>
+                        <img id="imgs4" class="two columns"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                    </figure>
+                    <figure>
+                        <img id="imgs5" class="two columns"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                    </figure>
+                     <figure>
+                        <img id="imgs6" class="two columns"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                    </figure>
+
                 </div>
 
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary active" data-dismiss="modal">Close</button>
-                    <button type="button" id="contactMe" class="btn btn-success active">Contact Me</button>
+                    <button type="button" class="btn btn navyBlue text-white active" data-dismiss="modal">Close</button>
+                    <button type="button" id="contactMe" class="btn navyBlueLight text-white active">Contact Me</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer class="page-footer text-light navyBlue font-small fixed-bottom">
+
+        <div class="footer-copyright text-center py-3 naturalWHite"> ©2019 Copyright ||
+            <a style="naturalWHitecolor: #fff7f7;" href="https://github.com/cliffordjorgensen/guideFinder"> <i
+                    class="fa fa-github"></i> GitHub Repo</a></div>
+    </footer>
+
     <script>
         $(document).ready(function () {
             $(".extendedInfo").on("click", function (e) {
@@ -93,6 +128,12 @@
                     $("#city").text(data.city);
                     $("#yearsofExperience").text(data.yearsofExperience);
                     $("#descriptionActivity").text(data.descriptionActivity);
+                    $("#imgs1").attr("src", data.pic1);
+                    $("#imgs2").attr("src", data.pic2);
+                    $("#imgs3").attr("src", data.pic3);
+                    $("#imgs4").attr("src", data.pic4);
+                    $("#imgs5").attr("src", data.pic5);
+                    $("#imgs6").attr("src", data.pic6);
 
                     $('#myModal').modal('toggle');
                 });
@@ -107,7 +148,7 @@
     </script>
 
     <!-- Javascript links -->
-    <script src="assets/javascript/map.js"></script> 
+    <script src="assets/javascript/map.js"></script>
     <script src="assets/javascript/carousel.js"></script>
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -119,9 +160,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <!-- google api -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
-    <script src= "https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
-   
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
+    <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+
 </body>
 
 </html>
