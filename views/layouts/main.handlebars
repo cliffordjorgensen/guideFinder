@@ -2,37 +2,35 @@
 <html>
 
 <style>
+    nav.navbar {
+        background-color: #204969;
+        color: #fff7f7;
+    }
 
-nav.navbar {
-    background-color:  #204969;
-    color: #fff7f7;
-}
+    nav.navbar ul.nav li {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
-nav.navbar ul.nav li {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}    
+    .naturalWHite {
+        color: #fff7f7
+    }
 
-.naturalWHite {
-color: #fff7f7
+    .navyBlue {
+        background-color: #204969;
+    }
 
-}
+    .navyBlueLight {
+        background-color: #08ffc8;
+    }
 
-.navyBlue {
-    background-color: #204969;
-}
+    a:hover {
+        background-color: #08ffc8;
+    }
 
-.navyBlueLight {
-    background-color: #08ffc8;
-}
-a:hover {
-    background-color: #08ffc8;
-  }
+    .HighlightGreen {
+        color: #08ffc8;
 
-.HighlightGreen{
-    color: #08ffc8;
-    
-}
-
+    }
 </style>
 
 
@@ -108,27 +106,33 @@ a:hover {
                     <p class="texto-modal" id="descriptionActivity"></p>
                     <figure>
                         <img id="imgs1"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                            width="350" height="300" alt="">
                     </figure>
                     <figure>
                         <img id="imgs2" class="two columns"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                            width="350" height="300" alt="">
                     </figure>
                     <figure>
                         <img id="imgs3" class="two columns"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                            width="350" height="300" alt="">
                     </figure>
                     <figure>
                         <img id="imgs4" class="two columns"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                            width="350" height="300" alt="">
                     </figure>
                     <figure>
                         <img id="imgs5" class="two columns"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                            width="350" height="300" alt="">
                     </figure>
-                     <figure>
+                    <figure>
                         <img id="imgs6" class="two columns"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" width="350" height="300" alt="">
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                            width="350" height="300" alt="">
                     </figure>
 
                 </div>
@@ -151,7 +155,7 @@ a:hover {
 
 
     {{!-- Chat HTML --}}
-        <div class="modal fade bd-example-modal-lg" id="chatModal" tabindex="-1" role="dialog"
+    <div class="modal fade bd-example-modal-lg" id="chatModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
         <div class="modal-dialog modal-lg" role="document">
@@ -162,7 +166,7 @@ a:hover {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                 {{!-- Chat modal content --}}
+                {{!-- Chat modal content --}}
                 <div class="modal-body">
                     <div id='guide-chat'>
                         <div id="chat-window">
@@ -173,76 +177,80 @@ a:hover {
                         <input id="username" type="text" placeholder="Username" />
                         <input id="message" type="text" placeholder="Message" />
                         <button id="send-button">Send</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="close-button" class="btn btn-primary active" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="close-button" class="btn btn-primary active" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        $(document).ready(function () {
-            $(".extendedInfo").on("click", function (e) {
-                e.preventDefault();
-                const id = $(this).attr("data-id")
-                $.get("/profiles/" + id).then(function (data) {
+        <script>
+            $(document).ready(function () {
+                $(".extendedInfo").on("click", function (e) {
+                    e.preventDefault();
+                    const id = $(this).attr("data-id")
+                    localStorage.setItem('contactId', id)
+                    $.get("/profiles/" + id).then(function (data) {
 
-                    $("#exampleModalLongTitle").text(data.name);
-                    $("#match-img").attr("src", data.photolink);
-                    $("#age").text(data.age);
-                    $("#activity").text(data.activity);
-                    $("#city").text(data.city);
-                    $("#yearsofExperience").text(data.yearsofExperience);
-                    $("#descriptionActivity").text(data.descriptionActivity);
-                    $("#imgs1").attr("src", data.pic1);
-                    $("#imgs2").attr("src", data.pic2);
-                    $("#imgs3").attr("src", data.pic3);
-                    $("#imgs4").attr("src", data.pic4);
-                    $("#imgs5").attr("src", data.pic5);
-                    $("#imgs6").attr("src", data.pic6);
+                        $("#exampleModalLongTitle").text(data.name);
+                        $("#match-img").attr("src", data.photolink);
+                        $("#age").text(data.age);
+                        $("#activity").text(data.activity);
+                        $("#city").text(data.city);
+                        $("#yearsofExperience").text(data.yearsofExperience);
+                        $("#descriptionActivity").text(data.descriptionActivity);
+                        $("#imgs1").attr("src", data.pic1);
+                        $("#imgs2").attr("src", data.pic2);
+                        $("#imgs3").attr("src", data.pic3);
+                        $("#imgs4").attr("src", data.pic4);
+                        $("#imgs5").attr("src", data.pic5);
+                        $("#imgs6").attr("src", data.pic6);
 
-                    $('#myModal').modal('toggle');
+                        $('#myModal').modal('toggle');
+                    });
+                });
+
+                $("#contactMe").on("click", function (e) {
+                    e.preventDefault();
+
+                    window.location.replace("/loginUser")
                 });
             });
-
-            $("#contactMe").on("click", function (e) {
-                console.log("isaac was here <--what's up, Isaac? -Adam")
-                e.preventDefault();
-                window.location.replace("/loginUser")
-            });
-        });
-        // jQuery to open and close chat modal
+            // jQuery to open and close chat modal
             $(".chat-button").on("click", function (e) {
                 e.preventDefault();
                 const id = $(this).attr("data-id")
-                    $('#chatModal').modal('toggle');
+                $('#chatModal').modal('toggle');
             });
-    </script>
-
-    <!-- Javascript links -->
-
-    <script src="assets/javascript/map.js"></script>
 
 
-    <script src="./../../public/assets/chat/index.js"></script>
-    <script src="./../../public/assets/chat/public/chat.js"></script>
-    <script src="assets/javascript/map.js"></script> 
 
-    <script src="assets/javascript/carousel.js"></script>
-    <!-- bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <!-- google api -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
-    <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+        </script>
+
+        <!-- Javascript links -->
+        
+        <script src="assets/javascript/map.js"></script>
+
+
+        <script src="./../../public/assets/chat/index.js"></script>
+        <script src="./../../public/assets/chat/public/chat.js"></script>
+        <script src="assets/javascript/map.js"></script>
+
+        <script src="assets/javascript/carousel.js"></script>
+        <!-- bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!-- google api -->
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAQv_VajKKxKQTr1tw-PpDaMhV30n_D-c&callback=initMap"></script>
+        <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
 
 </body>
 
