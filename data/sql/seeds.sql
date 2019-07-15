@@ -128,12 +128,3 @@ VALUES ("hellorn", "123", 37.7749, -122.4194),
        ("michelw", "956", 37.7749, -122.4194),
        ("cvelez", "712", 37.7749, -122.4194);
 
----------userLogin--------------
-
-INSERT INTO userCredential (firstName, lastName, accountname, userpassword)
-VALUES ("Lauren","Hiller","hellorn", "123"),
-       ("Lindzy", "Lawson","lindzy26", "456"),
-       ("Juan","Perez","juanperez", "789"),
-       ("Michel","Jean","michelw", "956"),
-       ("Cesar", "Velez","cvelez", "712");
-

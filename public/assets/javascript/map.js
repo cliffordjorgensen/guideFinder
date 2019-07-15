@@ -1,3 +1,4 @@
+const connection = require("../../../config/connection.js");
 const mysql = require("mysql");
 
 var map, infoWindow;
@@ -20,7 +21,6 @@ function initMap() {
             };
             map.setCenter(pos);
             var marker = new google.maps.Marker({ position: pos, map: map });
-
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -34,7 +34,6 @@ function initMap() {
             var markerCluster = new MarkerClusterer(map, markers, {
                 imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
             });
-
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -52,33 +51,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
-var locations = [{
-    lat: 37.7749,
-    lng: -122.4194
-}, {
-    lat: 37.2749,
-    lng: -122.5194
-}, {
-    lat: 37.9749,
-    lng: -122.1194
-}, {
-    lat: 37.3749,
-    lng: -122.4194
-}, {
-    lat: 38.1749,
-    lng: -124.1194
-}, {
-    lat: 37.9749,
-    lng: -122.9194
-}, {
-    lat: 37.1749,
-    lng: -122.1194
-}, {
-    lat: 37.7790,
-    lng: -122.4101
-}, ]
+
+var locations = []
 
 
 // this code will query MySQL to find locations in a specific radius
 // SELECT id, (3959 * acos(cos(radians(37)) * cos(radians(lat)) * cos(radians(lng) - radians(-122)) + sin(radians(37)) * sin(radians(lat)))) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0, 20;
-
