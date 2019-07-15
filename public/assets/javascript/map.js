@@ -31,8 +31,6 @@ function initMap() {
             var markerCluster = new MarkerClusterer(map, markers, {
                 imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
             });
-
-
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -75,3 +73,7 @@ var locations = [{
     lat: 37.7790,
     lng: -122.4101
 }, ]
+
+
+// this code will query MySQL to find locations in a specific radius
+// SELECT id, (3959 * acos(cos(radians(37)) * cos(radians(lat)) * cos(radians(lng) - radians(-122)) + sin(radians(37)) * sin(radians(lat)))) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0, 20;
