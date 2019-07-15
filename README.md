@@ -39,36 +39,24 @@ After account creation the traveler will have the ability to chat with the guide
   * If traveler has account then chat interface appears
   * Else traveler is prompted to make an account.
   
-  
-  
-  
 # to-do
 
   * maps and markers for nearby guides
-  * chat functionality 
-  * validation for guides and users authentication for guide connection (tokens)
-  * actual profile creation (guides, trvelers) through sign-up nav bar tab
-  * appending guide info to home carousel cards without overflowing 
+  * query sql database for lat lng (loop)
+  * chat functionality
+  *
+  
   
   
 current work assignments:
 
 Badri: after guide authentication, guide re-direction.
 
-CLiff: MAPS cluster of guide markers collect lat and lng data for guide.
+CLiff: queury sql for lat lng append markers to map, integrated the search radius query.
 
-Adam: CHAT(socket.io)
+Adam: CHAT(socket.io) 
 
-Julianna: user accounts
-
-
-CSS: anyone who cares
-
-
-
-
-
-
+Julianna: css, 
 
 
 Guide account has a profile this is where the guide "sells" themselves (profile api).

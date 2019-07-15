@@ -14,7 +14,6 @@ the Bay is well known for as you spot famous musicians’ homes while listening 
 "abc" ,
  37.7749,
 -122.4194),
-
 ("Logan Smith", 
 "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500", 
 32, 
@@ -29,7 +28,6 @@ sandwiches, and wine at notable venues committed to sustainable and organic cuis
  37.2749,
 -122.5194),
 ("Olivia Johnson", 
-
 "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
 28, 
 "Wine tour", 
@@ -81,8 +79,6 @@ Silicon Valley, and Monterey and Santa Cruz. I also offer completely customizabl
  37.7790,
 -122.4101);
 
-
-
 -- pictures database--------------
 
 INSERT INTO pictures (pic1, pic2, pic3, pic4, pic5, pic6)
@@ -123,14 +119,6 @@ VALUES("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/0
 "https://images.pexels.com/photos/2575757/pexels-photo-2575757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 "https://images.pexels.com/photos/2440009/pexels-photo-2440009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 
-
-INSERT INTO login(email, password) VALUES ('lucas.brennan', 'hello');
-INSERT INTO login(email, password) VALUES ('logan.smith@yahoo.com', 'hello');
-INSERT INTO login(email, password) VALUES ('olivia.johnson@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('tiffany.allen@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('michael.dunder@gmail.com', 'hello');
-INSERT INTO login(email, password) VALUES ('norman.malone@hotmail.com', 'hello');
-
 ----------userLogin--------------
 
 INSERT INTO userCredential (accountname, userpassword, latitude, longitude)
@@ -139,5 +127,4 @@ VALUES ("hellorn", "123", 37.7749, -122.4194),
        ("juanperez", "789", 37.7749, -122.4194),
        ("michelw", "956", 37.7749, -122.4194),
        ("cvelez", "712", 37.7749, -122.4194),
-
 

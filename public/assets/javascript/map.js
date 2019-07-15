@@ -20,6 +20,7 @@ function initMap() {
             };
             map.setCenter(pos);
             var marker = new google.maps.Marker({ position: pos, map: map });
+
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -33,6 +34,7 @@ function initMap() {
             var markerCluster = new MarkerClusterer(map, markers, {
                 imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
             });
+
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -79,3 +81,4 @@ var locations = [{
 
 // this code will query MySQL to find locations in a specific radius
 // SELECT id, (3959 * acos(cos(radians(37)) * cos(radians(lat)) * cos(radians(lng) - radians(-122)) + sin(radians(37)) * sin(radians(lat)))) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0, 20;
+
