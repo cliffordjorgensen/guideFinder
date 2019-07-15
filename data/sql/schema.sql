@@ -14,7 +14,7 @@ descriptionActivity VARCHAR(9001) NULL,
 username VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
 latitude DECIMAL(9,6),
-longitude DECIMAL(9,6)
+longitude DECIMAL(9,6),
 PRIMARY KEY (guideID)); 
 
 SELECT * from guideinfo;
@@ -40,8 +40,7 @@ lastName VARCHAR(255) NULL,
 accountname VARCHAR (255) NULL,
 userpassword VARCHAR(255) NOT NULL,
 latitude DECIMAL(9,6),
-longitude DECIMAL(9,6)
+longitude DECIMAL(9,6),
 PRIMARY KEY (userID));
 
 SELECT * FROM userCredential;
-
