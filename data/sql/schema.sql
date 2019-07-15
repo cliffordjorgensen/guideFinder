@@ -13,6 +13,8 @@ yearsofExperience INT NULL,
 descriptionActivity VARCHAR(9001) NULL,
 username VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
+latitude DECIMAL(9,6),
+longitude DECIMAL(9,6)
 PRIMARY KEY (guideID)); 
 
 SELECT * from guideinfo;
@@ -31,7 +33,7 @@ PRIMARY KEY (picId));
 SELECT * from guideinfo INNER JOIN pictures ON guideinfo.guideID = pictures.picId;
 
 
-USE guideinfo_db;
+USE guidefinder_db;
 CREATE TABLE login(
 name VARCHAR(255) NOT NULL,
 userId INT NOT NULL AUTO_INCREMENT,
@@ -45,8 +47,14 @@ userID INT AUTO_INCREMENT,
 firstName VARCHAR(255) NULL,
 lastName VARCHAR(255) NULL,
 accountname VARCHAR (255) NULL,
-userpassword VARCHAR(255) NOT NULL,
-PRIMARY KEY (userID)); 
+
+userpassword VARCHAR(255) NOT NULL, 
+latitude DECIMAL(9,6),
+longitude DECIMAL(9,6)
+PRIMARY KEY (userID));
+
+SELECT * from userCredential;
+
 
 SELECT * FROM userCredential;
 
