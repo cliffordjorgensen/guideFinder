@@ -1,13 +1,12 @@
 <style>
     body {
-        padding-top: 4.2rem;
-        padding-bottom: 4.2rem;
-        background: url("https://images.pexels.com/photos/2531237/pexels-photo-2531237.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+       padding-bottom: 4.2rem;
+        background: #dadada;
     }
 
     a {
         text-decoration: none !important;
-    }
+    }   
 
     h1,
     h2,
@@ -24,9 +23,9 @@
         flex-direction: column;
         width: 100%;
         pointer-events: auto;
-        background-color: #fff;
+        background-color: white;
         background-clip: padding-box;
-        border: 1px solid rgba(0, 0, 0, .2);
+        color: #204969;
         border-radius: 1.1rem;
         outline: 0;
         max-width: 500px;
@@ -45,7 +44,7 @@
         color: #aaa;
         margin-top: 10px;
         margin-bottom: 10px;
-        padding-top: 10px;
+        padding-top: 50px;
         padding-bottom: 10px;
     }
 
@@ -66,14 +65,6 @@
         margin-bottom: 0px !important;
     }
 
-    .google {
-        color: #666;
-        width: 100%;
-        height: 40px;
-        text-align: center;
-        outline: none;
-        border: 1px solid lightgrey;
-    }
 
     form .error {
         color: #ff0000;
@@ -94,11 +85,10 @@
                             <h1>Login</h1>
                         </div>
                     </div>
-                    <form >
+                    <form>
                         <div class="form-group">
-                            <label>Email address</label>
-                            <input class="form-control" id="userLoginName"
-                               placeholder="Enter email">
+                            <label>Username</label>
+                            <input class="form-control" id="userLoginName" placeholder="Enter username">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password</label>
@@ -109,20 +99,14 @@
                             <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
                         </div>
                         <div class="col-md-12 text-center ">
-                            <button id="loginBtn" type="submit" class=" btn btn-block mybtn btn-primary tx-tfm ">Login</button>
+                            <button id="loginBtn" type="submit"
+                                class="btn btn-block mybtn tx-tfm navyBlue text-white">Login</button>
                         </div>
                         <div class="col-md-12 ">
                             <div class="login-or">
                                 <hr class="hr-or">
-                                <span class="span-or">or</span>
+                                <span class="span-or"></span>
                             </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <p class="text-center">
-                                <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
-                                    </i> Signup using Google
-                                </a>
-                            </p>
                         </div>
                         <div class="form-group">
                             <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
@@ -150,9 +134,9 @@
                                 aria-describedby="emailHelp" placeholder="Enter Lastname">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email"
-                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="email" name="email" class="form-control" id="userName"
+                                aria-describedby="emailHelp" placeholder="Enter a username">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password</label>
@@ -160,7 +144,8 @@
                                 aria-describedby="emailHelp" placeholder="Enter Password">
                         </div>
                         <div class="col-md-12 text-center mb-3">
-                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For
+                            <button type="submit" id="newUserBtn" class="btn btn-block mybtn tx-tfm navyBlue text-white">Get
+                                Started For
                                 Free</button>
                         </div>
                         <div class="col-md-12 ">
@@ -179,43 +164,67 @@
 
 <script>
 
+
+
     $(document).ready(function () {
-        $("#loginBtn").on("click", function (e) {
-         
-            e.preventDefault();
-            console.log("clicked")
-            $.ajax({
-                method: 'POST',
-                url: '/loginUser/',
-                data: {
-                    username: $("#userLoginName").val().trim(),
-                    password: $("#userLoginPassword").val().trim()
-                }
-            }).then(function (response) {
-                localStorage.setItem('userId', response.userID);
-                window.location("/profiles")
+
+        $("#signup").click(function () {
+            $("#first").fadeOut("fast", function () {
+                $("#second").fadeIn("fast");
+                $("#newUserBtn").on("click", function (e) {
+                    e.preventDefault();
+                    const firstNameUser = $("#firstname").val().trim();
+                    const lastNameUser = $("#lastname").val().trim();
+                    const userName = $("#userName").val().trim();
+                    const password = $("#password").val().trim();
+                    $.ajax({
+                        method: 'POST',
+                        url: '/newUser',
+                        data: {
+                            firstNameUser,
+                            lastNameUser,
+                            userName,
+                            password,
+                        }
+                    }).then(function () {  
+
+                    });
+                    window.location.replace("/singleProfileForUsers")
+                    
+                });
             });
         });
-    });
 
-    $("#signup").click(function () {
-        $("#first").fadeOut("fast", function () {
-            $("#second").fadeIn("fast");
+        $("#signin").click(function () {
+            $("#second").fadeOut("fast", function () {
+                $("#first").fadeIn("fast");
+            });
         });
-    });
 
-    $("#signin").click(function () {
-        $("#second").fadeOut("fast", function () {
-            $("#first").fadeIn("fast");
+        
+        
+       $("#loginBtn").on("click", function (e) {
+        console.log($('#password').val());
+        e.preventDefault();
+        console.log("clickked")
+        $.ajax({
+            method: 'POST',
+            url: '/loginUser/',
+            data: {
+                username: $("#userLoginName").val().trim(),
+                password: $("#userLoginPassword").val().trim()
+            }
+        }).then(function (response) {
+            console.log(response);
+           localStorage.setItem('id', response.guideID);
+
+           window.location.href = '/guides/' + response.guideID;
+           
         });
+
+     });
+
     });
-
-
-
-
-
-
-   
 
 
 </script>
