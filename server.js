@@ -32,11 +32,14 @@ connection.connect(function(err) {
     }
     console.log("connected as id " + connection.threadId);
 });
+
 app.get("/home", (req, res) => {
     connection.query('SELECT * FROM guideinfo;', (err, data) => {
+        // Do not delete!
         const active = data[0]
         const restOfGuides = data.slice(1)
         res.render('home', { guideinfo: restOfGuides, active: active });
+        // Do not delete!
     })
 });
 app.get("/profiles", (req, res) => {
@@ -57,6 +60,7 @@ app.get("/profiles/:id", (req, res) => {
 app.get("/login", function(req, res) {
     res.render("login")
 });
+
 
 app.get("/loginUser", function(req, res) {
         res.render("loginUser")
