@@ -189,7 +189,7 @@
                     }).then(function () {  
 
                     });
-                    window.location.replace("/singleProfileForUsers")
+                    window.location.replace("/loginUser")
                     
                 });
             });
@@ -201,10 +201,9 @@
             });
         });
 
-        
-        
+     
        $("#loginBtn").on("click", function (e) {
-        console.log($('#password').val());
+        console.log($('#userLoginPassword').val());
         e.preventDefault();
         console.log("clickked")
         $.ajax({
@@ -215,10 +214,9 @@
                 password: $("#userLoginPassword").val().trim()
             }
         }).then(function (response) {
-            console.log(response);
-           localStorage.setItem('id', response.guideID);
-
-           window.location.href = '/guides/' + response.guideID;
+           localStorage.setItem('userID', response.userID);
+            const contactId = localStorage.getItem("contactId")
+           window.location.href = '/singleProfileForUsers/' + contactId;
            
         });
 
