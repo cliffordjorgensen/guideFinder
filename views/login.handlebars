@@ -1,63 +1,254 @@
-<div id="login">
-    <h3 class="text-center text-white pt-5">LogIn or Register</h3>
-    <div class="container">
-        <div id="login-row" class="row justify-content-center align-items-center">
-            <div id="login-column" class="col-md-6">
-                <div id="login-box" class="col-md-12">
-                    <form id="login-form" class="form">
-                        <h3 class="text-center text-info">Login</h3>
-                        <div class="form-group">
-                            <label for="username" class="text-info">{{Username}}</label><br>
-                            <input type="text" name="username" id="username" class="form-control"
-                                placeholder="Enter email">
+<style>
+    body {
+        padding-top: 4.2rem;
+        padding-bottom: 4.2rem;
+        background: rgba(0, 0, 0, 0.76);
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: 'Kaushan Script', cursive;
+    }
+
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+    }
+
+    .tx-tfm {
+        text-transform: uppercase;
+    }
+
+    .mybtn {
+        border-radius: 50px;
+    }
+
+    .login-or {
+        position: relative;
+        color: #aaa;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .span-or {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: -2px;
+        margin-left: -25px;
+        background-color: #fff;
+        width: 50px;
+        text-align: center;
+    }
+
+    .hr-or {
+        height: 1px;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .google {
+        color: #666;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        outline: none;
+        border: 1px solid lightgrey;
+    }
+
+    form .error {
+        color: #ff0000;
+    }
+
+    #second {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <div id="first">
+                    <div class="myform form ">
+                        <div class="logo mb-3">
+                            <div class="col-md-12 text-center">
+                                <h1>Login</h1>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">{{Password}}</label><br>
-                            <input type="password" name="password" id="password" class="form-control"
-                                placeholder="Password">
+                        <form>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control" id="userLoginName" placeholder="Enter Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Password</label>
+                                <input type="password" name="password" id="userLoginPassword" class="form-control"
+                                    aria-describedby="emailHelp" placeholder="Enter Password">
+                            </div>
+                            <!-- <div class="form-group">
+                                <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+                            </div> -->
+                            <div class="col-md-12 text-center ">
+                                <button id="loginBtn" type="submit"
+                                    class=" btn btn-block btn-primary tx-tfm ">Login</button>
+                            </div>
+                            <div class="col-md-12 ">
+                                <div class="login-or">
+                                    <hr class="hr-or">
+                                    <span class="span-or">or</span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <p class="text-center">
+                                    <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
+                                        </i> Signup using Google
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div id="second">
+                    <div class="myform form ">
+                        <div class="logo mb-3">
+                            <div class="col-md-12 text-center">
+                                <h1>Signup</h1>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input
-                                        id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                            <button name="submit" class="btn btn-info btn-md submitbtn" value="submit">submit</button>
-                        </div>
-                        <div id="register-link" class="text-right">
-                            <a href="#" class="text-info">Register here</a>
-                        </div>
+                        <form action="#" name="registration">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" name="name" class="form-control" id="fullname"
+                                    aria-describedby="emailHelp" placeholder="Enter Fullname">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Photo Link</label>
+                                <input type="text" name="photolink" class="form-control" id="newPhotoLink"
+                                    aria-describedby="emailHelp" placeholder="Provide a link to your Picture">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">City</label>
+                                <input type="city" name="city" class="form-control" id="newCity"
+                                    aria-describedby="emailHelp" placeholder="Enter City">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Age</label>
+                                <input type="age" name="age" class="form-control" id="newAge"
+                                    aria-describedby="emailHelp" placeholder="Enter Age">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email Address</label>
+                                <input type="email" name="email" class="form-control" id="newEmail"
+                                    aria-describedby="emailHelp" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Username</label>
+                                <input type="username" name="username" class="form-control" id="newUserName"
+                                    aria-describedby="emailHelp" placeholder="Create your Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"> Password</label>
+                                <input type="password" name="password" id="newPassword" class="form-control"
+                                    aria-describedby="emailHelp" placeholder="Create your Password">
+                            </div>
+                            <div class="form-group">
+                                <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+                            </div>
+                            <div class="col-md-12 text-center mb-3">
+                                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For
+                                    Free</button>
+                            </div>
+                            <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                                </div>
+                            </div>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <script>
 
-
-<script>
-
-    $(document).ready(function(){
-    $(".submitbtn").on("click", function (e) {
-        console.log($('#password').val());
-        e.preventDefault();
-        console.log("clickked")
-        $.ajax({
-            method: 'POST',
-            url: '/login/',
-            data: {
-                username: $("#username").val().trim(),
-                password: $("#password").val().trim()
-            }
-        }).then(function (response) {
-            console.log(response);
-           localStorage.setItem('id', response.guideID);
-
-           window.location.href = '/guides/' + response.guideID;
-           
+        $("#signup").click(function () {
+            $("#first").fadeOut("fast", function () {
+                $("#second").fadeIn("fast");
+            });
         });
 
-     });
+        $("#signin").click(function () {
+            $("#second").fadeOut("fast", function () {
+                $("#first").fadeIn("fast");
+            });
+        });
 
-     
-    });
 
+        $(document).ready(function () {
+            $("#loginBtn").on("click", function (e) {
+                console.log('hello from login button!')
+                console.log($('#password').val());
+                e.preventDefault();
+                $.ajax({
+                    method: 'POST',
+                    url: '/login',
+                    data: {
+                        username: $("#userLoginName").val().trim(),
+                        password: $("#userLoginPassword").val().trim()
+                    }
+                }).then(function (response) {
+                    console.log(response);
+                    localStorage.setItem('id', response.guideID);
+                    window.location.href = '/guides/' + response.guideID;
 
-</script>
+                });
+            });
+        });
+
+        $('.mybtn').on('click', function (event) {
+            (event).preventDefault();
+            console.log('sign up button clickeddddddd');
+            $.ajax({
+                url: '/login',
+                method: 'PUT',
+                data: {
+                    name: $('#fullname').val().trim(),
+                    photolink: $('#newPhotoLink').val().trim(),
+                    age: $('#newAge').val().trim(),
+                    city: $('#newCity').val().trim(),
+                    username: $('#newUserName').val().trim(),
+                    password: $('#newPassword').val().trim()
+                }
+            }).then(function (response) {
+                console.log('response is rendered until here')
+                console.log(response);
+                localStorage.setItem('id', response.guideID);
+                window.location.href = '/guides/' + response.guideID;
+            });
+        });
+    </script>
+</body>
