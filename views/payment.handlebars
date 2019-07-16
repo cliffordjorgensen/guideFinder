@@ -1,28 +1,86 @@
 <style>
-    body {
-        margin-top: 20px;
+     body {
+        padding-bottom: 4.2rem;
+        background: #dadada;
     }
 
-    .panel-title {
-        display: inline;
-        font-weight: bold;
+    a {
+        text-decoration: none !important;
     }
 
-    .checkbox.pull-right {
-        margin: 0;
+    h1,
+    h2,
+    h3 {
+        font-family: 'Kaushan Script', cursive;
     }
 
-    .pl-ziro {
-        padding-left: 0px;
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: white;
+        background-clip: padding-box;
+        color: #204969;
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+    }
+
+    .tx-tfm {
+        text-transform: uppercase;
+    }
+
+    .mybtn {
+        border-radius: 50px;
+    }
+
+    .login-or {
+        position: relative;
+        color: #aaa;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    .span-or {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: -2px;
+        margin-left: -25px;
+        background-color: #fff;
+        width: 50px;
+        text-align: center;
+    }
+
+    .hr-or {
+        height: 1px;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+
+    form .error {
+        color: #ff0000;
+    }
+
+    #second {
+        display: none;
     }
 </style>
 
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-4">
-            <div class="panel panel-default">
+    <div class="row align-items-center justify-content-center"> 
+        <div class="col-xs-12 col-md-4 p-3 mt-4" style="background-color: #fff7f7;">
+            <div class="panel panel-default" style="color: #204969">
                 <div class="panel-heading">
-                    <h3 class="panel-title">
+                    <h3 class="panel-title text-center">
                         Payment Details
                     </h3>
                     <div class="checkbox pull-right">
@@ -70,8 +128,8 @@
             </div>
           
             <br />
-            <a href="https://www.paypal.com/us/webapps/mpp/sem/account-selection-signup?gclid=Cj0KCQjwyLDpBRCxARIsAEENsrJzC_--2SP3eSHXBxe4RuAKaZ0hZko9qvtXaxNrxrxznRUBqsFp1AIaAiiWEALw_wcB&gclsrc=aw.ds"
-                class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <a href="/home"
+                class="btn btn-success btn-lg btn-block border-0" style="color: #fff7f7; background-color: #08ffc8;" role="button">Pay</a>
         </div>
     </div>
 </div>

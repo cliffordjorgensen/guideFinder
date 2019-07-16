@@ -100,12 +100,12 @@
                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""
                         class="img-thumbnail col-md-6 mb-3">
                     <p class="texto-modal" id="age"></p>
-                    <p class="texto-modal" id="activity"></p>
+                    <p class="texto-modal" style="font-weight: bold" id="activity"></p>
                     <p class="texto-modal" id="city"></p>
                     <p class="texto-modal" id="yearsofExperience"></p>
                     <p class="texto-modal" id="descriptionActivity"></p>
                     <figure>
-                        <img id="imgs1"
+                        <img id="imgs1" class="two columns"
                             src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
                             width="350" height="300" alt="">
                     </figure>
@@ -195,10 +195,7 @@
 
                         $("#exampleModalLongTitle").text(data.name);
                         $("#match-img").attr("src", data.photolink);
-                        $("#age").text(data.age);
                         $("#activity").text(data.activity);
-                        $("#city").text(data.city);
-                        $("#yearsofExperience").text(data.yearsofExperience);
                         $("#descriptionActivity").text(data.descriptionActivity);
                         $("#imgs1").attr("src", data.pic1);
                         $("#imgs2").attr("src", data.pic2);
