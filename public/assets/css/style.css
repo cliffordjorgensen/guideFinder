@@ -28,8 +28,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color:#dadada;
-}   
+    background-color: #dadada;
+}
 
 @media (min-width: 768px) {
     /* show 3 items */
@@ -115,11 +115,11 @@ body {
     margin-top: -85px;
 }
 
+
 /* Style for my modal pictures (main.handlebars) */
 
-.texto-modal{
+.texto-modal {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 }
 
 figure {
@@ -128,20 +128,17 @@ figure {
     position: relative;
     overflow: hidden;
     box-shadow: 0px 1px 10px rgb(0, 0, 0, 0.4);
-    
-  }
+}
 
-.twocolumns{
+.twocolumns {
     width: 48%;
     display: inline-block;
-    
-    
 }
 
 
- /* --------- CHAT STYLING ----------- */
-                    
- #guide-chat {
+/* --------- CHAT STYLING ----------- */
+
+#guide-chat {
     max-width: 600px;
     margin: 30px auto;
     border: 1px solid #ddd;
@@ -210,4 +207,41 @@ close-button {
     width: 10%;
     border-radius: 0 0 2px 2px;
 }
+
+
 /* ----------------------------------- */
+
+
+/* Nav Bar */
+
+nav.navbar {
+    background-color: #204969;
+    color: #fff7f7;
+}
+
+nav.navbar ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.naturalWHite {
+    color: #fff7f7
+}
+
+.navyBlue {
+    background-color: #204969;
+}
+
+.navyBlueLight {
+    background-color: #08ffc8;
+}
+
+a:hover {
+    background-color: #08ffc8;
+}
+
+.HighlightGreen {
+    color: #08ffc8;
+}
+
+
+/* Contact Us */
