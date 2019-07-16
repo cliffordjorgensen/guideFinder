@@ -1,6 +1,3 @@
-const connection = require("../../../config/connection.js");
-const mysql = require("mysql");
-
 var map, infoWindow;
 
 function initMap() {
@@ -51,8 +48,31 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 };
 
-
-var locations = []
+var locations = [{
+    lat: 37.7749,
+    lng: -122.4194
+}, {
+    lat: 37.2749,
+    lng: -122.5194
+}, {
+    lat: 37.9749,
+    lng: -122.1194
+}, {
+    lat: 37.3749,
+    lng: -122.4194
+}, {
+    lat: 38.1749,
+    lng: -124.1194
+}, {
+    lat: 37.9749,
+    lng: -122.9194
+}, {
+    lat: 37.1749,
+    lng: -122.1194
+}, {
+    lat: 37.7790,
+    lng: -122.4101
+}, ]
 
 
 // this code will query MySQL to find locations in a specific radius

@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
     database: "guidefinder_db"
 });
 
-module.exports = function (app) {
+module.exports = function(app) {
 
     app.get("/home", (req, res) => {
         connection.query('SELECT * FROM guideinfo;', (err, data) => {
@@ -61,15 +61,15 @@ module.exports = function (app) {
     });
 
 
-    app.get("/login", function (req, res) {
+    app.get("/login", function(req, res) {
         res.render("login")
     });
 
-    app.get("/loginUser", function (req, res) {
+    app.get("/loginUser", function(req, res) {
         res.render("loginUser")
     })
 
-    app.get("/payment", function (req, res) {
+    app.get("/payment", function(req, res) {
         res.render("payment")
     })
 
@@ -94,10 +94,10 @@ module.exports = function (app) {
         });
     });
 
-    app.put('/login', function (req, res) {
+    app.put('/login', function(req, res) {
         let query = 'INSERT INTO guideinfo SET ?';
         //  'INSERT INTO guideinfo (name, photolink, age, activity, city, yearsofExperience, descriptionActivity, username, password ) VALUES (?)';
-        connection.query(query, { name: req.body.name, photolink: req.body.photolink, age: req.body.age, activity: null, city: req.body.city, yearsofExperience: null, descriptionActivity: null, username: req.body.username, password: req.body.password }, function (err, result) {
+        connection.query(query, { name: req.body.name, photolink: req.body.photolink, age: req.body.age, activity: null, city: req.body.city, yearsofExperience: null, descriptionActivity: null, username: req.body.username, password: req.body.password }, function(err, result) {
             if (err) throw err;
             else {
                 let query = "SELECT * FROM guideinfo WHERE username = ? AND password = ?";
@@ -144,9 +144,8 @@ module.exports = function (app) {
 
 
     app.post('/newUser', (req, res) => {
-        connection.query("INSERT INTO userCredential (firstName, lastName, accountname, userpassword) VALUES (?, ?, ?,? )",
-            [req.body.firstNameUser, req.body.lastNameUser, req.body.userName, req.body.password],
-            function (err, res) {
+        connection.query("INSERT INTO userCredential (firstName, lastName, accountname, userpassword) VALUES (?, ?, ?,? )", [req.body.firstNameUser, req.body.lastNameUser, req.body.userName, req.body.password],
+            function(err, res) {
                 if (err) throw err;
                 console.log("new User created")
 

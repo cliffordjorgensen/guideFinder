@@ -1,39 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<style>
-    nav.navbar {
-        background-color: #204969;
-        color: #fff7f7;
-    }
-
-    nav.navbar ul.nav li {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-    .naturalWHite {
-        color: #fff7f7
-    }
-
-    .navyBlue {
-        background-color: #204969;
-    }
-
-    .navyBlueLight {
-        background-color: #08ffc8;
-    }
-
-    a:hover {
-        background-color: #08ffc8;
-    }
-
-    .HighlightGreen {
-        color: #08ffc8;
-
-    }
-</style>
-
-
 <head>
     <title>Guide Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
 </head>
 
@@ -69,23 +34,19 @@
                         <a class="dropdown-item guide" href="/login">Guide</a>
                         <div role="separator" class="dropdown-divider"></div>
                         <a class="dropdown-item traveler" href="/loginUser">Traveler</a>
-
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link naturalWHite" href="/contactUs"> <i class="fa fa-id-badge"></i> Contact us</a>
                 </li>
-
             </ul>
         </div>
     </nav>
 
     {{{body}}}
 
-
     <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -94,7 +55,6 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <div class="modal-body">
                     <img id="match-img"
                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""
@@ -134,10 +94,7 @@
                             src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
                             width="350" height="300" alt="">
                     </figure>
-
                 </div>
-
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn navyBlue text-white active" data-dismiss="modal">Close</button>
                     <button type="button" id="contactMe" class="btn navyBlueLight text-white active">Contact Me</button>
@@ -145,19 +102,15 @@
             </div>
         </div>
     </div>
-
     <footer class="page-footer text-light navyBlue font-small fixed-bottom">
-
         <div class="footer-copyright text-center py-3 naturalWHite"> ©2019 Copyright ||
             <a style="naturalWHitecolor: #fff7f7;" href="https://github.com/cliffordjorgensen/guideFinder"> <i
                     class="fa fa-github"></i> GitHub Repo</a></div>
     </footer>
 
-
     {{!-- Chat HTML --}}
     <div class="modal fade bd-example-modal-lg" id="chatModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -210,7 +163,6 @@
 
                 $("#contactMe").on("click", function (e) {
                     e.preventDefault();
-
                     window.location.replace("/loginUser")
                 });
             });
@@ -220,20 +172,11 @@
                 const id = $(this).attr("data-id")
                 $('#chatModal').modal('toggle');
             });
-
-
-
         </script>
-
         <!-- Javascript links -->
-        
-        <script src="assets/javascript/map.js"></script>
-
-
         <script src="./../../public/assets/chat/index.js"></script>
         <script src="./../../public/assets/chat/public/chat.js"></script>
         <script src="assets/javascript/map.js"></script>
-
         <script src="assets/javascript/carousel.js"></script>
         <!-- bootstrap -->
         <script src="https://code.jquery.com/jquery-3.4.1.js"
