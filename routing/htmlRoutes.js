@@ -40,7 +40,7 @@ module.exports = function (app) {
 
     app.get("/guides/:id", (req, res) => {
         const id = req.params.id
-        connection.query('SELECT * FROM guideinfo WHERE guideID = ?;', [id], (err, data) => {
+        connection.query('SELECT * FROM guideinfo INNER JOIN pictures ON guideinfo.guideID = pictures.picId WHERE guideID=?;', [id], (err, data) => {
             if (err) throw err
             if (data.length <= 0) {
                 return res.json({ error: "Not found" });
@@ -51,7 +51,7 @@ module.exports = function (app) {
 
     app.get("/singleProfileForUsers/:id", (req, res) => {
         const id = req.params.id
-        connection.query('SELECT * FROM guideinfo WHERE guideID = ?;', [id], (err, data) => {
+        connection.query('SELECT * FROM guideinfo INNER JOIN pictures ON guideinfo.guideID = pictures.picId WHERE guideID=?;', [id], (err, data) => {
             if (err) throw err
             if (data.length <= 0) {
                 return res.json({ error: "Not found" });
